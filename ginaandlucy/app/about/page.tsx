@@ -12,7 +12,7 @@ const timeline = [
   },
   {
     year: '2021',
-    title: 'Der Butler bringt Gina',
+    title: 'Neues Familienmitglied: Gina',
     desc: 'Um Lucy Gesellschaft zu geben, holt der Butler Gina — 8 Monate älter als Lucy, reinrassige Siamkatze, sofortiges Selbstbewusstsein. Gina ist von Anfang an größer und hat das Sagen. Lucy akzeptiert das vorläufig.',
   },
   {
@@ -38,10 +38,8 @@ const timeline = [
 ]
 
 const funFacts = [
-  { emoji: '😴', title: 'Gina', desc: 'Schläft den ganzen Tag — jede bequeme Gelegenheit wird sofort genutzt. Die unkomplizierteste Person im Haushalt. Wird aber sauer, wenn der Butler sie zu lange im Kalten lässt. Dann gibt es einen Blick, der tötet.' },
-  { emoji: '👹', title: 'Lucy', desc: 'Dominant. Eine echte Diva. Lässt sich gar nichts sagen. Der Butler traut sich nicht mal, sie hochzuheben — sonst gibt es Kratzer am Körper und er wird regelrecht zerfleischt. Sie hat den Thron eingenommen und ist seitdem nicht mehr zu stoppen.' },
-  { emoji: '🧑‍💼', title: 'Der Butler', desc: 'Lebt in ständiger Angst vor Lucy. Traut sich nicht, sie anzufassen. Fragt sich täglich, ob er noch lange im Haus bleiben darf. Tatsächliche Aufgaben: Futter, Fotos, Kratzer versorgen, existieren.' },
-  { emoji: '🏠', title: 'Das Reich', desc: '47m² Münchner Altbau, 2. OG, Südbalkon. 100% unter katzischer Kontrolle. Der Butler darf bleiben — vorerst.' },
+  { emoji: '🧑‍💼', title: 'Die Familie', desc: 'Die Familie hat Gina & Lucy erlaubt, sich im Netz zu zeigen. Einzige Bedingung: die Familie bleibt anonym. Wer hinter dem Account steckt, bleibt geheim. Gina und Lucy sind die Stars. Die Familie kümmert sich um den Rest.' },
+  { emoji: '🏠', title: 'Das Reich', desc: '47m² Münchner Altbau, 2. OG, Südbalkon. 100% unter katzischer Kontrolle. Die Familie darf bleiben — vorerst.' },
 ]
 
 export default function AboutPage() {
@@ -67,41 +65,77 @@ export default function AboutPage() {
         </p>
       </motion.div>
 
-      {/* Main story */}
+      {/* Gina */}
       <motion.div
-        className="grid lg:grid-cols-2 gap-8 mb-16 items-center"
+        className="grid lg:grid-cols-2 gap-8 mb-12 items-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <div>
           <Image
-            src="https://placehold.co/500x500/1a1a1a/ff3e8a?text=Gina+%26+Lucy+🐾"
-            alt="Gina und Lucy"
+            src="/gini.jpeg"
+            alt="Gina"
             width={500}
             height={500}
             className="rounded-2xl w-full object-cover border border-[#2a2a2a]"
           />
+          <div className="flex items-center gap-2 mt-3 px-1">
+            <div className="w-2 h-2 rounded-full bg-[#a855f7]" />
+            <span className="text-white text-sm font-semibold">Gina</span>
+            <span className="text-zinc-400 text-xs">Siamkatze</span>
+          </div>
         </div>
         <div className="space-y-4 text-zinc-300 leading-relaxed">
           <p>
-            <strong className="text-white">Gina</strong> ist die Entspannung in Katzenform. Sie schläft den ganzen Tag, nutzt jede bequeme Möglichkeit — Sofa, Laptop, Gesicht des Butlers — und ist die unkomplizierteste Person im Haushalt. Solange der Butler sie nicht zu lange im Kalten lässt. Denn dann gibt es einen Blick, der keine weiteren Erklärungen braucht.
-          </p>
-          <p>
-            <strong className="text-white">Lucy</strong> ist eine andere Geschichte. Dominant, eine echte Diva — sie lässt sich gar nichts sagen. Der Butler traut sich nicht einmal, sie hochzuheben. Zu groß das Risiko: Kratzer am Körper, Fleischwunden, vollständige Niederlage. Sie hat 2023 den Thron übernommen und ist seitdem nicht mehr zu stoppen. Ob der Butler noch lange im Haus bleiben darf — ungewiss.
-          </p>
-          <p>
-            2026, beim gemeinsamen Instagram-Scrollen, hatten die beiden die Idee: <strong className="text-white">selbst durchstarten.</strong> Seitdem wächst @ginaandlucy.official — und das Ziel ist klar: Influencer, Internet-Stars, Weltherrschaft.
-          </p>
-          <p className="text-[#ff3e8a] font-medium">
-            Der Plan läuft. ©ginaandlucy | All Rights Reserved.
+            <strong className="text-white">Gina</strong> ist die Entspannung in Katzenform. Sie schläft den ganzen Tag und nutzt jede bequeme Gelegenheit die sich bietet. Sofa, Laptop, Gesicht der Familie. Alles gut. Sie ist die unkomplizierteste Person im Haushalt, solange die Familie sie nicht zu lange draußen warten lässt. Dann gibt es einen Blick der keine weiteren Erklärungen braucht.
           </p>
         </div>
       </motion.div>
 
+      {/* Lucy */}
+      <motion.div
+        className="grid lg:grid-cols-2 gap-8 mb-16 items-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
+        <div>
+          <Image
+            src="/Lucy.png"
+            alt="Lucy"
+            width={500}
+            height={500}
+            className="rounded-2xl w-full object-cover border border-[#2a2a2a]"
+          />
+          <div className="flex items-center gap-2 mt-3 px-1">
+            <div className="w-2 h-2 rounded-full bg-[#ff3e8a]" />
+            <span className="text-white text-sm font-semibold">Lucy</span>
+            <span className="text-zinc-400 text-xs">Maine Coon</span>
+          </div>
+        </div>
+        <div className="space-y-4 text-zinc-300 leading-relaxed">
+          <p>
+            <strong className="text-white">Lucy</strong> ist nochmal eine ganz andere Geschichte. Sie ist dominant, eine echte Diva und lässt sich gar nichts sagen. Die Familie traut sich nicht mal sie hochzuheben weil das Risiko einfach zu groß ist. Kratzer, Fleischwunden, vollständige Niederlage. Sie hat 2023 den Thron übernommen und ist seitdem nicht mehr aufzuhalten. Ob die Familie noch lange im Haus bleiben darf ist täglich neu ungewiss.
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Closing sentence */}
+      <motion.p
+        className="text-zinc-300 text-center text-lg leading-relaxed mb-16 max-w-2xl mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        2026 hatten die beiden beim gemeinsamen Instagram-Scrollen auf dem Sofa der Familie die Idee: <strong className="text-white">selbst durchstarten.</strong> Seitdem wächst @ginaandlucy.official und das Ziel ist klar. Influencer werden, Internet-Stars sein, Weltherrschaft sichern.
+        <br /><br />
+        <span className="text-[#ff3e8a] font-medium">Der Plan läuft. ©ginaandlucy | All Rights Reserved.</span>
+      </motion.p>
+
       {/* Fun Facts */}
       <div className="mb-16">
-        <h2 className="text-2xl font-bold mb-6 text-center">Die Hauptcharaktere</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">Weitere Infos</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {funFacts.map((fact, i) => (
             <motion.div

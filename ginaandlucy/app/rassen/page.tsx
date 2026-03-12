@@ -95,7 +95,7 @@ export default function RassenPage() {
           </div>
           <div>
             <Image
-              src="https://placehold.co/600x500/1a0a00/ff8a3e?text=🦁+Maine+Coon"
+              src="/Lucy.png"
               alt="Maine Coon Katze"
               width={600}
               height={500}
@@ -183,7 +183,7 @@ export default function RassenPage() {
           </div>
           <div className="lg:order-1">
             <Image
-              src="https://placehold.co/600x500/0a0010/ff3e8a?text=👁️+Siamkatze"
+              src="/gini.jpeg"
               alt="Siamkatze"
               width={600}
               height={500}

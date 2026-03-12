@@ -1,4 +1,4 @@
-// File: c:\Users\Viktoria.R03-PC02-DK\Documents\Copy\ginaandlucy\app\rassen\page.tsx
+// File: C:\Users\Viktoria.R03-PC02-DK\Documents\Copy\ginaandlucy\app\rassen\page.tsx
 import * as entry from '../../../../app/rassen/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
