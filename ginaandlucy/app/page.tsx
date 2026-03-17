@@ -99,7 +99,7 @@ export default function HomePage() {
             {
               emoji: '📖',
               title: 'Unsere Geschichte',
-              desc: 'Erfahre wie zwei Siamkatzen die Weltherrschaft planen.',
+              desc: 'Erfahre wie eine Siamkatze und eine Maine Coon die Weltherrschaft planen.',
               href: '/about',
               label: 'Zur Story',
             },
