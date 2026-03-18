@@ -19,15 +19,27 @@
   --card-foreground: #ffffff;
 }
 
+/* Light mode overrides */
+html.light {
+  --background: #ffffff;
+  --card: #f4f4f5;
+  --muted: #e4e4e7;
+  --foreground: #09090b;
+  --muted-foreground: #71717a;
+  --border: #e4e4e7;
+  --card-foreground: #09090b;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom scrollbar */

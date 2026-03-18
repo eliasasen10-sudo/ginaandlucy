@@ -5,29 +5,33 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
-
-const links = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'Über uns' },
-  { href: '/rassen', label: 'Rassen' },
-  { href: '/merch', label: 'Merch' },
-  { href: '/feed', label: 'Feed' },
-]
+import { ThemeToggle } from '@/components/ui/theme-toggle'
+import { LangToggle } from '@/components/ui/lang-toggle'
+import { useLanguage } from '@/components/providers'
 
 export function Navbar() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const { t } = useLanguage()
+
+  const links = [
+    { href: '/', label: t('Home', 'Home') },
+    { href: '/about', label: t('Über uns', 'About') },
+    { href: '/rassen', label: t('Rassen', 'Breeds') },
+    { href: '/merch', label: t('Merch', 'Merch') },
+    { href: '/feed', label: t('Feed', 'Feed') },
+  ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#2a2a2a] bg-[#0a0a0a]/90 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-[#2a2a2a] dark:border-[#2a2a2a] light:border-zinc-200 bg-[#0a0a0a]/90 dark:bg-[#0a0a0a]/90 light:bg-white/90 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-lg tracking-tight">
             <span className="text-2xl">🐾</span>
-            <span className="text-white">gina</span>
+            <span className="text-white dark:text-white light:text-zinc-900">gina</span>
             <span className="text-[#ff3e8a]">&</span>
-            <span className="text-white">lucy</span>
+            <span className="text-white dark:text-white light:text-zinc-900">lucy</span>
           </Link>
 
           {/* Desktop nav */}
@@ -50,18 +54,26 @@ export function Navbar() {
               href="/merch"
               className="ml-2 px-4 py-2 rounded-lg bg-[#ff3e8a] text-white text-sm font-semibold hover:bg-[#ff3e8a]/80 transition-colors"
             >
-              Shop now
+              {t('Shop', 'Shop')}
             </Link>
+            <div className="ml-3 flex items-center gap-2">
+              <LangToggle />
+              <ThemeToggle />
+            </div>
           </nav>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2 text-zinc-400 hover:text-white"
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          {/* Mobile: toggles + menu button */}
+          <div className="md:hidden flex items-center gap-2">
+            <LangToggle />
+            <ThemeToggle />
+            <button
+              className="p-2 text-zinc-400 hover:text-white"
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile nav */}
