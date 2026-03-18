@@ -278,10 +278,10 @@ export default function AboutPage() {
             <CircularRevealHeading
               size="md"
               items={[
-                { text: 'SCHLAFEN', image: '/gini.jpeg' },
-                { text: 'ESSEN', image: '/gini.jpeg' },
-                { text: 'SCHLAFEN', image: '/gini.jpeg' },
-                { text: 'ESSEN', image: '/gini.jpeg' },
+                { text: t('SCHLAFEN', 'SLEEP'), image: '/gini.jpeg' },
+                { text: t('ESSEN', 'EAT'), image: '/gini.jpeg' },
+                { text: t('SCHLAFEN', 'SLEEP'), image: '/gini.jpeg' },
+                { text: t('ESSEN', 'EAT'), image: '/gini.jpeg' },
               ]}
               centerText={
                 <span className="text-foreground font-bold text-lg">Gina</span>
@@ -292,10 +292,10 @@ export default function AboutPage() {
             <CircularRevealHeading
               size="md"
               items={[
-                { text: 'KRATZEN', image: '/Lucy.png' },
-                { text: 'SCHLAFEN', image: '/Lucy.png' },
-                { text: 'KRATZEN', image: '/Lucy.png' },
-                { text: 'SCHLAFEN', image: '/Lucy.png' },
+                { text: t('KRATZEN', 'SCRATCH'), image: '/Lucy.png' },
+                { text: t('SCHLAFEN', 'SLEEP'), image: '/Lucy.png' },
+                { text: t('KRATZEN', 'SCRATCH'), image: '/Lucy.png' },
+                { text: t('SCHLAFEN', 'SLEEP'), image: '/Lucy.png' },
               ]}
               centerText={
                 <span className="text-foreground font-bold text-lg">Lucy</span>
