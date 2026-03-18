@@ -2,38 +2,75 @@
 
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
+import { Timeline } from '@/components/ui/timeline'
 import Image from 'next/image'
 
-const timeline = [
+const timelineData = [
   {
-    year: '2021',
-    title: 'Lucy & Manfred kommen ins Haus',
-    desc: 'Lucy wird 2021 geboren und zieht mit ihrem Bruder Manfred ein. Schnell wird ihr klar: sie kann nicht mit Männern. Manfred wird aus dem Haus verbannt. Lucy: unbeeindruckt.',
+    title: '2021',
+    content: (
+      <div>
+        <h3 className="font-semibold text-white text-base mb-1">Lucy & Manfred kommen ins Haus</h3>
+        <p className="text-zinc-400 text-sm leading-relaxed">
+          Lucy wird 2021 geboren und zieht mit ihrem Bruder Manfred ein. Schnell wird ihr klar: sie kann nicht mit Männern. Manfred wird aus dem Haus verbannt. Lucy: unbeeindruckt.
+        </p>
+      </div>
+    ),
   },
   {
-    year: '2021',
-    title: 'Neues Familienmitglied: Gina',
-    desc: 'Um Lucy Gesellschaft zu geben, holt der Butler Gina — 8 Monate älter als Lucy, reinrassige Siamkatze, sofortiges Selbstbewusstsein. Gina ist von Anfang an größer und hat das Sagen. Lucy akzeptiert das vorläufig.',
+    title: '2021',
+    content: (
+      <div>
+        <h3 className="font-semibold text-white text-base mb-1">Neues Familienmitglied: Gina</h3>
+        <p className="text-zinc-400 text-sm leading-relaxed">
+          Um Lucy Gesellschaft zu geben, holt der Butler Gina — 8 Monate älter als Lucy, reinrassige Siamkatze, sofortiges Selbstbewusstsein. Gina ist von Anfang an größer und hat das Sagen. Lucy akzeptiert das vorläufig.
+        </p>
+      </div>
+    ),
   },
   {
-    year: '2023',
-    title: 'Lucy übernimmt den Thron',
-    desc: 'Innerhalb von zwei Jahren wächst Lucy auf das Dreifache von Ginas Größe heran. Die Machtverhältnisse verschieben sich still und leise. Gina behauptet bis heute, sie habe das freiwillig abgegeben.',
+    title: '2023',
+    content: (
+      <div>
+        <h3 className="font-semibold text-white text-base mb-1">Lucy übernimmt den Thron</h3>
+        <p className="text-zinc-400 text-sm leading-relaxed">
+          Innerhalb von zwei Jahren wächst Lucy auf das Dreifache von Ginas Größe heran. Die Machtverhältnisse verschieben sich still und leise. Gina behauptet bis heute, sie habe das freiwillig abgegeben.
+        </p>
+      </div>
+    ),
   },
   {
-    year: '2026',
-    title: 'Die Idee: selbst Insta-Stars werden',
-    desc: 'Beim gemeinsamen Instagram-Scrollen auf dem Sofa des Butlers haben Gina & Lucy die zündende Idee: Wenn andere das können, können wir das auch — und besser. Der Account @ginaandlucy.official geht live.',
+    title: '2026',
+    content: (
+      <div>
+        <h3 className="font-semibold text-white text-base mb-1">Die Idee: selbst Insta-Stars werden</h3>
+        <p className="text-zinc-400 text-sm leading-relaxed">
+          Beim gemeinsamen Instagram-Scrollen auf dem Sofa des Butlers haben Gina & Lucy die zündende Idee: Wenn andere das können, können wir das auch — und besser. Der Account @ginaandlucy.official geht live.
+        </p>
+      </div>
+    ),
   },
   {
-    year: '2026',
-    title: 'Das Imperium wächst 🚀',
-    desc: 'Die Community wächst, der Content läuft — und das Ziel ist klar: Internet-Stars werden, Influencer-Status erreichen, Weltherrschaft sichern. Schritt 1 ✅. Der Rest folgt.',
+    title: '2026',
+    content: (
+      <div>
+        <h3 className="font-semibold text-white text-base mb-1">Das Imperium wächst 🚀</h3>
+        <p className="text-zinc-400 text-sm leading-relaxed">
+          Die Community wächst, der Content läuft — und das Ziel ist klar: Internet-Stars werden, Influencer-Status erreichen, Weltherrschaft sichern. Schritt 1 ✅. Der Rest folgt.
+        </p>
+      </div>
+    ),
   },
   {
-    year: '2026',
-    title: '14.200 Follower & counting',
-    desc: 'Der Plan zur Weltherrschaft schreitet voran. Schritt 1 (viral gehen) ✅. Schritt 2 (???). Schritt 3 (Herrschaft) 🔜',
+    title: '2026',
+    content: (
+      <div>
+        <h3 className="font-semibold text-white text-base mb-1">14.200 Follower & counting</h3>
+        <p className="text-zinc-400 text-sm leading-relaxed">
+          Der Plan zur Weltherrschaft schreitet voran. Schritt 1 (viral gehen) ✅. Schritt 2 (???). Schritt 3 (Herrschaft) 🔜
+        </p>
+      </div>
+    ),
   },
 ]
 
@@ -158,35 +195,8 @@ export default function AboutPage() {
 
       {/* Timeline */}
       <div>
-        <h2 className="text-2xl font-bold mb-8 text-center">Die Karriere-Timeline</h2>
-        <div className="relative">
-          {/* Line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-[#2a2a2a]" />
-
-          <div className="space-y-8">
-            {timeline.map((item, i) => (
-              <motion.div
-                key={item.year}
-                className="relative flex gap-6"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 * i }}
-              >
-                {/* Dot */}
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#ff3e8a]/10 border border-[#ff3e8a]/30 flex items-center justify-center z-10">
-                  <span className="text-[#ff3e8a] text-xs font-bold">{item.year}</span>
-                </div>
-                {/* Content */}
-                <Card className="flex-1 p-4">
-                  <CardContent className="p-0">
-                    <h3 className="font-semibold text-white mb-1">{item.title}</h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        <h2 className="text-2xl font-bold mb-2 text-center">Die Karriere-Timeline</h2>
+        <Timeline data={timelineData} />
       </div>
     </div>
   )
