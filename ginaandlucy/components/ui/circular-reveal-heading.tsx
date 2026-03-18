@@ -43,7 +43,7 @@ const ImageOverlay = ({ image, size = 'md' }: { image: string; size?: 'sm' | 'md
   <motion.div
     initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
     transition={{ duration: 0.3 }}
-    className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
+    className="absolute inset-0 z-50 flex items-center justify-center pointer-events-none"
   >
     <motion.img
       src={image} alt=""
@@ -103,7 +103,7 @@ export const CircularRevealHeading = ({ items, centerText, className, size = 'md
       <motion.div className="absolute inset-[2px] rounded-full bg-[#e6e6e6]" style={{ boxShadow: 'inset 6px 6px 12px #d1d1d1, inset -6px -6px 12px #ffffff' }} />
       <motion.div className="absolute inset-[12px] rounded-full bg-[#e6e6e6]" style={{ boxShadow: 'inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff' }} />
 
-      <motion.div className="absolute inset-0 flex items-center justify-center">
+      <motion.div className="absolute inset-0 z-40 flex items-center justify-center">
         <AnimatePresence>
           {!activeImage && (
             <motion.div
@@ -118,27 +118,28 @@ export const CircularRevealHeading = ({ items, centerText, className, size = 'md
         </AnimatePresence>
       </motion.div>
 
+      {rotatingImage && (
+        <motion.div
+          className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none"
+          initial={{ rotate: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+        >
+          <img
+            src={rotatingImage}
+            alt=""
+            className="rounded-full object-cover"
+            style={{ width: '52%', height: '52%' }}
+          />
+        </motion.div>
+      )}
+
       <motion.div
-        className="absolute inset-0"
+        className="absolute inset-0 z-30"
         initial={{ rotate: 0 }}
         animate={{ rotate: 360 }}
         transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
       >
-        {rotatingImage && (
-          <img
-            src={rotatingImage}
-            alt=""
-            className="absolute rounded-full object-cover"
-            style={{
-              width: '52%',
-              height: '52%',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              pointerEvents: 'none',
-            }}
-          />
-        )}
         <svg viewBox="0 0 400 400" className="w-full h-full">
           <defs>
             <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
