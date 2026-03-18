@@ -4,6 +4,7 @@ import { LucyCursor } from '@/components/ui/lucy-cursor'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Card } from '@/components/ui/card'
 import { ContainerScroll } from '@/components/ui/container-scroll-animation'
+import { SparklesText } from '@/components/ui/sparkles-text'
 import Link from 'next/link'
 import { Instagram, Youtube, ShoppingBag, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -72,7 +73,12 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.05] mb-6">
-              {t('Das chaotische', 'The chaotic')}<br />
+              {t('Das', 'The')}{' '}
+              <SparklesText
+                text={t('chaotische', 'chaotic')}
+                className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter"
+              />
+              <br />
               {t('Leben von', 'life of')}{' '}
               <span className="text-[#a855f7]">Gina</span>
               <br />
