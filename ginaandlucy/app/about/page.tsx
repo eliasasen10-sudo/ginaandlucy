@@ -285,7 +285,7 @@ export default function AboutPage() {
                 { text: t('ESSEN', 'EAT'), image: '/gini.jpeg' },
               ]}
               centerText={
-                <span className="text-foreground font-bold text-lg">Gina</span>
+                <span className="text-[#333333] font-bold text-lg">Gina</span>
               }
             />
           </div>
@@ -300,7 +300,7 @@ export default function AboutPage() {
                 { text: t('SCHLAFEN', 'SLEEP'), image: '/Lucy.png' },
               ]}
               centerText={
-                <span className="text-foreground font-bold text-lg">Lucy</span>
+                <span className="text-[#333333] font-bold text-lg">Lucy</span>
               }
             />
           </div>
