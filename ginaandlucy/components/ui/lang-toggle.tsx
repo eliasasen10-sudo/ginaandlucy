@@ -15,8 +15,7 @@ export function LangToggle({ className }: LangToggleProps) {
       onClick={() => setLang(lang === "de" ? "en" : "de")}
       className={cn(
         "flex items-center h-8 rounded-full px-1 gap-0.5 border transition-all duration-300 cursor-pointer",
-        "bg-zinc-950 border-zinc-800 dark:bg-zinc-950 dark:border-zinc-800",
-        "light:bg-white light:border-zinc-200",
+        "bg-card border-border",
         className
       )}
       aria-label="Toggle language"
