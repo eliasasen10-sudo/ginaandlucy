@@ -141,19 +141,14 @@ export default function AboutPage() {
           📖 <BlurredStagger text={t('Die echte Geschichte', 'The real story')} stagger={0.03} />
         </div>
         <h1 className="text-4xl sm:text-5xl font-black tracking-tighter mb-4 text-foreground">
-          <BlurredStagger text={t('Wer sind', 'Who are')} stagger={0.04} />{' '}
-          <span className="text-[#ff3e8a]"><BlurredStagger text="Gina & Lucy" stagger={0.04} /></span>?
+          {t('Wer sind', 'Who are')}{' '}
+          <span className="text-[#ff3e8a]">Gina & Lucy</span>?
         </h1>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-          <BlurredStagger
-            text={t(
-              'Eine Siamkatze & eine Maine Coon. Ein Apartment in München. Ein überarbeiteter Butler. Eine Mission: die Weltherrschaft. Das ist ihre Geschichte. Weitgehend wahr. Meistens.',
-              'A Siamese cat & a Maine Coon. An apartment in Munich. An overworked butler. One mission: world domination. This is their story. Mostly true. Usually.'
-            )}
-            splitBy="word"
-            stagger={0.04}
-            duration={0.25}
-          />
+          {t(
+            'Eine Siamkatze & eine Maine Coon. Ein Apartment in München. Ein überarbeiteter Butler. Eine Mission: die Weltherrschaft. Das ist ihre Geschichte. Weitgehend wahr. Meistens.',
+            'A Siamese cat & a Maine Coon. An apartment in Munich. An overworked butler. One mission: world domination. This is their story. Mostly true. Usually.'
+          )}
         </p>
       </motion.div>
 
