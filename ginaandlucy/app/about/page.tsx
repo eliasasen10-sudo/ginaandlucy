@@ -270,21 +270,38 @@ export default function AboutPage() {
 
       {/* Lebensmotto */}
       <div className="mb-16">
-        <h2 className="text-2xl font-bold mb-10 text-center text-foreground">
+        <h2 className="text-2xl font-bold mb-6 text-center text-foreground">
           <BlurredStagger text={t('Unser Lebensmotto', 'Our Life Motto')} stagger={0.04} />
         </h2>
+        <p className="text-center text-muted-foreground text-sm mb-8">
+          {t('Was Gina & Lucy wirklich beschäftigt…', 'What Gina & Lucy really think about…')}
+        </p>
+        {/* Thought bubble wrapping the plate */}
         <div className="flex justify-center">
-          <CircularRevealHeading
-            size="lg"
-            rotatingImage="/Katzenfutter.png"
-            items={[
-              { text: t('SCHLAFEN', 'SLEEP'), image: '/giniandlucy.png' },
-              { text: t('ESSEN', 'EAT'), image: '/giniandlucy.png' },
-              { text: t('SCHLAFEN', 'SLEEP'), image: '/giniandlucy.png' },
-              { text: t('ESSEN', 'EAT'), image: '/giniandlucy.png' },
-            ]}
-            centerText={null}
-          />
+          <div
+            className="relative w-full max-w-[520px]"
+            style={{
+              backgroundImage: 'url(/Sprechblase.png)',
+              backgroundSize: '100% 100%',
+              backgroundRepeat: 'no-repeat',
+              aspectRatio: '1 / 1',
+            }}
+          >
+            {/* plate sits in the cloud area: pad bottom for the bubble dots */}
+            <div className="absolute inset-0 flex items-center justify-center pb-[18%] px-[10%]">
+              <CircularRevealHeading
+                size="lg"
+                rotatingImage="/Katzenfutter.png"
+                items={[
+                  { text: t('SCHLAFEN', 'SLEEP'), image: '/giniandlucy.png' },
+                  { text: t('ESSEN', 'EAT'), image: '/giniandlucy.png' },
+                  { text: t('SCHLAFEN', 'SLEEP'), image: '/giniandlucy.png' },
+                  { text: t('ESSEN', 'EAT'), image: '/giniandlucy.png' },
+                ]}
+                centerText={null}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
