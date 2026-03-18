@@ -6,20 +6,23 @@ import { cn } from "@/lib/utils"
 interface BlurredStaggerProps {
   text: string
   className?: string
-  /** Use whileInView (scroll-triggered) instead of on-mount. Default: true */
-  inView?: boolean
-  /** Stagger delay between each character. Default: 0.015 */
+  /** "char" for headings, "word" for paragraphs. Default: "char" */
+  splitBy?: "char" | "word"
+  /** Stagger delay between items. Default: 0.015 */
   stagger?: number
-  /** Duration per character. Default: 0.3 */
+  /** Duration per item. Default: 0.3 */
   duration?: number
+  /** Use whileInView (scroll-triggered). Default: true */
+  inView?: boolean
 }
 
 export const BlurredStagger = ({
   text,
   className,
-  inView = true,
+  splitBy = "char",
   stagger = 0.015,
   duration = 0.3,
+  inView = true,
 }: BlurredStaggerProps) => {
   const container = {
     hidden: { opacity: 0 },
@@ -29,14 +32,16 @@ export const BlurredStagger = ({
     },
   }
 
-  const letterAnimation = {
-    hidden: { opacity: 0, filter: "blur(10px)" },
+  const itemAnimation = {
+    hidden: { opacity: 0, filter: "blur(8px)" },
     show:   { opacity: 1, filter: "blur(0px)" },
   }
 
   const animateProps = inView
-    ? { initial: "hidden", whileInView: "show", viewport: { once: true, margin: "-50px" } }
+    ? { initial: "hidden", whileInView: "show", viewport: { once: true, margin: "-40px" } }
     : { initial: "hidden", animate: "show" }
+
+  const items = splitBy === "word" ? text.split(" ") : text.split("")
 
   return (
     <motion.span
@@ -44,14 +49,14 @@ export const BlurredStagger = ({
       {...animateProps}
       className={cn("inline whitespace-normal break-words", className)}
     >
-      {text.split("").map((char, index) => (
+      {items.map((item, index) => (
         <motion.span
           key={index}
-          variants={letterAnimation}
+          variants={itemAnimation}
           transition={{ duration }}
           style={{ display: "inline" }}
         >
-          {char}
+          {splitBy === "word" ? (index < items.length - 1 ? item + " " : item) : item}
         </motion.span>
       ))}
     </motion.span>

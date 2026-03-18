@@ -150,8 +150,9 @@ export default function AboutPage() {
               'Eine Siamkatze & eine Maine Coon. Ein Apartment in München. Ein überarbeiteter Butler. Eine Mission: die Weltherrschaft. Das ist ihre Geschichte. Weitgehend wahr. Meistens.',
               'A Siamese cat & a Maine Coon. An apartment in Munich. An overworked butler. One mission: world domination. This is their story. Mostly true. Usually.'
             )}
-            stagger={0.008}
-            duration={0.2}
+            splitBy="word"
+            stagger={0.04}
+            duration={0.25}
           />
         </p>
       </motion.div>
@@ -179,8 +180,9 @@ export default function AboutPage() {
                 'ist die Entspannung in Katzenform. Sie schläft den ganzen Tag und nutzt jede bequeme Gelegenheit die sich bietet. Sofa, Laptop, Gesicht der Familie. Alles gut. Sie ist die unkomplizierteste Person im Haushalt, solange die Familie sie nicht zu lange draußen warten lässt. Dann gibt es einen Blick der keine weiteren Erklärungen braucht.',
                 "is relaxation in cat form. She sleeps all day and takes every comfortable opportunity available. Sofa, laptop, family's face. All fine. She is the most uncomplicated person in the household — as long as the family doesn't make her wait outside too long. Then comes a look that needs no further explanation."
               )}
-              stagger={0.006}
-              duration={0.18}
+              splitBy="word"
+              stagger={0.03}
+              duration={0.22}
             />
           </p>
         </div>
@@ -209,8 +211,9 @@ export default function AboutPage() {
                 'ist nochmal eine ganz andere Geschichte. Sie ist dominant, eine echte Diva und lässt sich gar nichts sagen. Die Familie traut sich nicht mal sie hochzuheben weil das Risiko einfach zu groß ist. Kratzer, Fleischwunden, vollständige Niederlage. Sie hat 2023 den Thron übernommen und ist seitdem nicht mehr aufzuhalten. Ob die Familie noch lange im Haus bleiben darf ist täglich neu ungewiss.',
                 "is a completely different story. She is dominant, a total diva and takes no orders from anyone. The family doesn't even dare pick her up because the risk is simply too high. Scratches, wounds, total defeat. She took the throne in 2023 and has been unstoppable ever since. Whether the family gets to stay in the house is uncertain on a daily basis."
               )}
-              stagger={0.006}
-              duration={0.18}
+              splitBy="word"
+              stagger={0.03}
+              duration={0.22}
             />
           </p>
         </div>
@@ -223,8 +226,9 @@ export default function AboutPage() {
             '2026 hatten die beiden beim gemeinsamen Instagram-Scrollen auf dem Sofa der Familie die Idee: selbst durchstarten. Seitdem wächst @ginaandlucy.official und das Ziel ist klar. Influencer werden, Internet-Stars sein, Weltherrschaft sichern.',
             "In 2026, while scrolling Instagram together on the family's sofa, the two had the idea: to make it big themselves. Since then @ginaandlucy.official has been growing and the goal is clear: become influencers, be internet stars, secure world domination."
           )}
-          stagger={0.007}
-          duration={0.2}
+          splitBy="word"
+          stagger={0.035}
+          duration={0.22}
         />
         <br /><br />
         <span className="text-[#ff3e8a] font-medium">
