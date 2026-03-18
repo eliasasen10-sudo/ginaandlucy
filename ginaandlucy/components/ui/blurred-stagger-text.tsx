@@ -42,15 +42,16 @@ export const BlurredStagger = ({
     <motion.span
       variants={container}
       {...animateProps}
-      className={cn("inline", className)}
+      className={cn("inline whitespace-normal break-words", className)}
     >
       {text.split("").map((char, index) => (
         <motion.span
           key={index}
           variants={letterAnimation}
           transition={{ duration }}
+          style={{ display: "inline" }}
         >
-          {char === " " ? "\u00A0" : char}
+          {char}
         </motion.span>
       ))}
     </motion.span>
