@@ -138,7 +138,7 @@ export default function AboutPage() {
         transition={{ duration: 0.6 }}
       >
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff3e8a]/10 border border-[#ff3e8a]/20 text-[#ff3e8a] text-xs font-medium mb-4">
-          📖 <BlurredStagger text={t('Die echte Geschichte', 'The real story')} stagger={0.03} />
+          📖 {t('Die echte Geschichte', 'The real story')}
         </div>
         <h1 className="text-4xl sm:text-5xl font-black tracking-tighter mb-4 text-foreground">
           {t('Wer sind', 'Who are')}{' '}
