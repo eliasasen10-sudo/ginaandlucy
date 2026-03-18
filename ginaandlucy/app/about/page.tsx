@@ -276,7 +276,7 @@ export default function AboutPage() {
         <div className="flex justify-center">
           <CircularRevealHeading
             size="lg"
-            rotatingImage="/Katzenfutter.jpg"
+            rotatingImage="/Katzenfutter.png"
             items={[
               { text: t('SCHLAFEN', 'SLEEP'), image: '/giniandlucy.png' },
               { text: t('ESSEN', 'EAT'), image: '/giniandlucy.png' },
