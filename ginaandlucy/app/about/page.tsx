@@ -277,6 +277,7 @@ export default function AboutPage() {
           <div className="flex flex-col items-center gap-3">
             <CircularRevealHeading
               size="md"
+              rotatingImage="/Katzenfutter.jpg"
               items={[
                 { text: t('SCHLAFEN', 'SLEEP'), image: '/gini.jpeg' },
                 { text: t('ESSEN', 'EAT'), image: '/gini.jpeg' },
@@ -291,6 +292,7 @@ export default function AboutPage() {
           <div className="flex flex-col items-center gap-3">
             <CircularRevealHeading
               size="md"
+              rotatingImage="/Katzenfutter.jpg"
               items={[
                 { text: t('KRATZEN', 'SCRATCH'), image: '/Lucy.png' },
                 { text: t('SCHLAFEN', 'SLEEP'), image: '/Lucy.png' },

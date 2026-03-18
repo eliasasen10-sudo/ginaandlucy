@@ -13,6 +13,7 @@ interface CircularRevealHeadingProps {
   centerText: React.ReactNode
   className?: string
   size?: 'sm' | 'md' | 'lg'
+  rotatingImage?: string
 }
 
 const sizeConfig = {
@@ -52,7 +53,7 @@ const ImageOverlay = ({ image, size = 'md' }: { image: string; size?: 'sm' | 'md
   </motion.div>
 )
 
-export const CircularRevealHeading = ({ items, centerText, className, size = 'md' }: CircularRevealHeadingProps) => {
+export const CircularRevealHeading = ({ items, centerText, className, size = 'md', rotatingImage }: CircularRevealHeadingProps) => {
   const [activeImage, setActiveImage] = useState<string | null>(null)
   const config = sizeConfig[size]
   const imagesLoaded = usePreloadImages(items.map((i) => i.image))
@@ -123,6 +124,21 @@ export const CircularRevealHeading = ({ items, centerText, className, size = 'md
         animate={{ rotate: 360 }}
         transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
       >
+        {rotatingImage && (
+          <img
+            src={rotatingImage}
+            alt=""
+            className="absolute rounded-full object-cover"
+            style={{
+              width: '52%',
+              height: '52%',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              pointerEvents: 'none',
+            }}
+          />
+        )}
         <svg viewBox="0 0 400 400" className="w-full h-full">
           <defs>
             <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
