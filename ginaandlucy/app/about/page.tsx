@@ -273,37 +273,18 @@ export default function AboutPage() {
         <h2 className="text-2xl font-bold mb-10 text-center text-foreground">
           <BlurredStagger text={t('Unser Lebensmotto', 'Our Life Motto')} stagger={0.04} />
         </h2>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-          <div className="flex flex-col items-center gap-3">
-            <CircularRevealHeading
-              size="md"
-              rotatingImage="/Katzenfutter.jpg"
-              items={[
-                { text: t('SCHLAFEN', 'SLEEP'), image: '/gini.jpeg' },
-                { text: t('ESSEN', 'EAT'), image: '/gini.jpeg' },
-                { text: t('SCHLAFEN', 'SLEEP'), image: '/gini.jpeg' },
-                { text: t('ESSEN', 'EAT'), image: '/gini.jpeg' },
-              ]}
-              centerText={
-                <span className="text-[#333333] font-bold text-lg">Gina</span>
-              }
-            />
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            <CircularRevealHeading
-              size="md"
-              rotatingImage="/Katzenfutter.jpg"
-              items={[
-                { text: t('KRATZEN', 'SCRATCH'), image: '/Lucy.png' },
-                { text: t('SCHLAFEN', 'SLEEP'), image: '/Lucy.png' },
-                { text: t('KRATZEN', 'SCRATCH'), image: '/Lucy.png' },
-                { text: t('SCHLAFEN', 'SLEEP'), image: '/Lucy.png' },
-              ]}
-              centerText={
-                <span className="text-[#333333] font-bold text-lg">Lucy</span>
-              }
-            />
-          </div>
+        <div className="flex justify-center">
+          <CircularRevealHeading
+            size="lg"
+            rotatingImage="/Katzenfutter.jpg"
+            items={[
+              { text: t('SCHLAFEN', 'SLEEP'), image: '/giniandlucy.png' },
+              { text: t('ESSEN', 'EAT'), image: '/giniandlucy.png' },
+              { text: t('SCHLAFEN', 'SLEEP'), image: '/giniandlucy.png' },
+              { text: t('ESSEN', 'EAT'), image: '/giniandlucy.png' },
+            ]}
+            centerText={null}
+          />
         </div>
       </div>
     </div>

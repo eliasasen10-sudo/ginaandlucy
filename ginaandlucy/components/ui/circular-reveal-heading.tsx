@@ -10,7 +10,7 @@ interface TextItem {
 
 interface CircularRevealHeadingProps {
   items: TextItem[]
-  centerText: React.ReactNode
+  centerText: React.ReactNode | null
   className?: string
   size?: 'sm' | 'md' | 'lg'
   rotatingImage?: string
@@ -103,20 +103,22 @@ export const CircularRevealHeading = ({ items, centerText, className, size = 'md
       <motion.div className="absolute inset-[2px] rounded-full bg-[#e6e6e6]" style={{ boxShadow: 'inset 6px 6px 12px #d1d1d1, inset -6px -6px 12px #ffffff' }} />
       <motion.div className="absolute inset-[12px] rounded-full bg-[#e6e6e6]" style={{ boxShadow: 'inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff' }} />
 
-      <motion.div className="absolute inset-0 z-40 flex items-center justify-center">
-        <AnimatePresence>
-          {!activeImage && (
-            <motion.div
-              initial={{ opacity: 1 }} exit={{ opacity: 0 }} animate={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              className="relative z-10 p-6 rounded-3xl bg-[#e6e6e6]"
-              whileHover={{ boxShadow: 'inset 3px 3px 6px #d1d1d1, inset -3px -3px 6px #ffffff' }}
-            >
-              {centerText}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
+      {centerText !== null && (
+        <motion.div className="absolute inset-0 z-40 flex items-center justify-center">
+          <AnimatePresence>
+            {!activeImage && (
+              <motion.div
+                initial={{ opacity: 1 }} exit={{ opacity: 0 }} animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="relative z-10 p-6 rounded-3xl bg-[#e6e6e6]"
+                whileHover={{ boxShadow: 'inset 3px 3px 6px #d1d1d1, inset -3px -3px 6px #ffffff' }}
+              >
+                {centerText}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      )}
 
       {rotatingImage && (
         <motion.div
@@ -128,11 +130,12 @@ export const CircularRevealHeading = ({ items, centerText, className, size = 'md
           <div
             className="rounded-full"
             style={{
-              width: '52%',
-              height: '52%',
+              width: '58%',
+              height: '58%',
               backgroundImage: `url(${rotatingImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
+              mixBlendMode: 'multiply',
             }}
           />
         </motion.div>
