@@ -9,11 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#0a0a0a',
-        card: '#1a1a1a',
+        background: 'var(--background)',
+        card: 'var(--card)',
         accent: '#ff3e8a',
-        muted: '#2a2a2a',
-        border: '#2a2a2a',
+        muted: 'var(--muted)',
+        border: 'var(--border)',
+        foreground: 'var(--foreground)',
+        'muted-foreground': 'var(--muted-foreground)',
+        subtle: 'var(--subtle)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

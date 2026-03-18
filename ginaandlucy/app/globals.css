@@ -8,26 +8,29 @@
   box-sizing: border-box;
 }
 
+/* Light mode (default) */
 :root {
-  --background: #0a0a0a;
-  --card: #1a1a1a;
-  --accent: #ff3e8a;
-  --muted: #2a2a2a;
-  --foreground: #ffffff;
-  --muted-foreground: #a1a1aa;
-  --border: #2a2a2a;
-  --card-foreground: #ffffff;
-}
-
-/* Light mode overrides */
-html.light {
   --background: #ffffff;
   --card: #f4f4f5;
+  --subtle: #f9fafb;
   --muted: #e4e4e7;
   --foreground: #09090b;
   --muted-foreground: #71717a;
   --border: #e4e4e7;
   --card-foreground: #09090b;
+  --accent: #ff3e8a;
+}
+
+/* Dark mode */
+html.dark {
+  --background: #0a0a0a;
+  --card: #1a1a1a;
+  --subtle: #0d0d0d;
+  --muted: #2a2a2a;
+  --foreground: #ffffff;
+  --muted-foreground: #a1a1aa;
+  --border: #2a2a2a;
+  --card-foreground: #ffffff;
 }
 
 html {
@@ -39,7 +42,7 @@ body {
   color: var(--foreground);
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Custom scrollbar */
@@ -47,7 +50,7 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
   background: #ff3e8a;

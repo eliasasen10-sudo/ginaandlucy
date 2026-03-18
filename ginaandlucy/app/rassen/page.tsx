@@ -45,11 +45,11 @@ export default function RassenPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff3e8a]/10 border border-[#ff3e8a]/20 text-[#ff3e8a] text-xs font-medium mb-4">
           🐾 Rasseporträt
         </div>
-        <h1 className="text-4xl sm:text-5xl font-black tracking-tighter mb-4">
+        <h1 className="text-4xl sm:text-5xl font-black tracking-tighter mb-4 text-foreground">
           Die Rassen hinter dem{' '}
           <span className="text-[#ff3e8a]">Imperium</span>
         </h1>
-        <p className="text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
           Zwei Rassen. Zwei Welten. Eine gemeinsame Mission. Hier erfährst du, was Gina & Lucy
           so besonders macht — jenseits des Chaos.
         </p>
@@ -63,9 +63,9 @@ export default function RassenPage() {
         transition={{ duration: 0.6, delay: 0.1 }}
       >
         <div className="flex items-center gap-3 mb-8">
-          <div className="h-px flex-1 bg-[#2a2a2a]" />
-          <span className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">Rasse 01</span>
-          <div className="h-px flex-1 bg-[#2a2a2a]" />
+          <div className="h-px flex-1 bg-border" />
+          <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Rasse 01</span>
+          <div className="h-px flex-1 bg-border" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10 items-start mb-10">
@@ -73,23 +73,23 @@ export default function RassenPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-4">
               Lucy's Rasse
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tighter mb-2">
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tighter mb-2 text-foreground">
               Maine Coon
             </h2>
-            <p className="text-zinc-500 text-sm font-medium mb-4 uppercase tracking-wider">Die größte Hauskatzenrasse der Welt</p>
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-muted-foreground text-sm font-medium mb-4 uppercase tracking-wider">Die größte Hauskatzenrasse der Welt</p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
               Die Maine Coon ist ein Naturwunder. In den rauhen Wäldern des US-Bundesstaats Maine entstanden,
               entwickelte sie ein dickes, wasserabweisendes Fell, kräftige Pfoten (oft mit Schneeschuhen — sog.
               Polydaktylie) und einen robusten Körperbau, der für harte Winter gemacht ist.
             </p>
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              Was Maine Coons besonders macht: ihr <strong className="text-white">dominantes, selbstbewusstes Wesen</strong>.
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Was Maine Coons besonders macht: ihr <strong className="text-foreground">dominantes, selbstbewusstes Wesen</strong>.
               Sie entscheiden selbst, wann sie Nähe wollen — und wann nicht. Annäherungsversuche ohne ihre Zustimmung
               enden selten gut. Lucy ist dafür das perfekte Beispiel: ihr Butler hebt sie nicht an. Er traut sich schlicht nicht.
             </p>
-            <p className="text-zinc-300 leading-relaxed">
-              Mit einem Gewicht von bis zu <strong className="text-white">12 kg</strong> und einer Körperlänge
-              von bis zu <strong className="text-white">120 cm</strong> (inkl. Schwanz) sind sie die Riesen unter den Hauskatzen —
+            <p className="text-muted-foreground leading-relaxed">
+              Mit einem Gewicht von bis zu <strong className="text-foreground">12 kg</strong> und einer Körperlänge
+              von bis zu <strong className="text-foreground">120 cm</strong> (inkl. Schwanz) sind sie die Riesen unter den Hauskatzen —
               und sie wissen es. Sie haben den Thron eingenommen und geben ihn nicht mehr her.
             </p>
           </div>
@@ -99,9 +99,9 @@ export default function RassenPage() {
               alt="Maine Coon Katze"
               width={600}
               height={500}
-              className="rounded-2xl w-full object-cover border border-[#2a2a2a]"
+              className="rounded-2xl w-full object-cover border border-border"
             />
-            <p className="text-zinc-600 text-xs mt-2 text-center">
+            <p className="text-muted-foreground text-xs mt-2 text-center">
               Maine Coon — bekannt für ihr üppiges Fell und ihre majestätische Erscheinung
             </p>
           </div>
@@ -121,8 +121,8 @@ export default function RassenPage() {
                   <div className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">{trait.icon}</span>
                     <div>
-                      <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-1">{trait.label}</div>
-                      <div className="text-sm text-zinc-300 leading-relaxed">{trait.value}</div>
+                      <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">{trait.label}</div>
+                      <div className="text-sm text-foreground leading-relaxed">{trait.value}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -134,9 +134,9 @@ export default function RassenPage() {
         {/* Fun Fact */}
         <div className="mt-6 p-5 rounded-xl bg-amber-500/5 border border-amber-500/20">
           <p className="text-amber-400 text-sm font-semibold mb-1">💡 Wusstest du?</p>
-          <p className="text-zinc-300 text-sm leading-relaxed">
+          <p className="text-muted-foreground text-sm leading-relaxed">
             Die Maine Coon "Stewie" hält den Guinness-Weltrekord als längste Hauskatze aller Zeiten —
-            <strong className="text-white"> 123,19 cm</strong> von Nase bis Schwanzspitze. Lucys Karriere hat also noch Luft nach oben.
+            <strong className="text-foreground"> 123,19 cm</strong> von Nase bis Schwanzspitze. Lucys Karriere hat also noch Luft nach oben.
           </p>
         </div>
       </motion.section>
@@ -149,9 +149,9 @@ export default function RassenPage() {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <div className="flex items-center gap-3 mb-8">
-          <div className="h-px flex-1 bg-[#2a2a2a]" />
-          <span className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">Rasse 02</span>
-          <div className="h-px flex-1 bg-[#2a2a2a]" />
+          <div className="h-px flex-1 bg-border" />
+          <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Rasse 02</span>
+          <div className="h-px flex-1 bg-border" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10 items-start mb-10">
@@ -159,23 +159,23 @@ export default function RassenPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff3e8a]/10 border border-[#ff3e8a]/20 text-[#ff3e8a] text-xs font-semibold mb-4">
               Gina's Rasse
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tighter mb-2">
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tighter mb-2 text-foreground">
               Siamkatze
             </h2>
-            <p className="text-zinc-500 text-sm font-medium mb-4 uppercase tracking-wider">Eine der ältesten Rassen der Welt</p>
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-muted-foreground text-sm font-medium mb-4 uppercase tracking-wider">Eine der ältesten Rassen der Welt</p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
               Die Siamkatze ist kein Haustier. Sie ist eine Persönlichkeit. Bereits in alten siamesischen
               Manuskripten aus dem 14. Jahrhundert erwähnt, gelten sie als heilige Tempel-Katzen — und
               das wissen sie ganz genau.
             </p>
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              Das markanteste Merkmal: die <strong className="text-white">tiefblauen Mandelaugen</strong> und
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Das markanteste Merkmal: die <strong className="text-foreground">tiefblauen Mandelaugen</strong> und
               das sogenannte "Point-Muster" — das Fell ist cremeweiß am Körper und dunkel an Ohren,
               Pfoten, Schwanz und Gesicht. Dieses Muster entsteht durch eine temperaturabhängige
               Genmutation: kühlere Körperteile werden dunkler.
             </p>
-            <p className="text-zinc-300 leading-relaxed">
-              Siamkatzen wie Gina sind die <strong className="text-white">unkompliziertesten Seelen</strong> —
+            <p className="text-muted-foreground leading-relaxed">
+              Siamkatzen wie Gina sind die <strong className="text-foreground">unkompliziertesten Seelen</strong> —
               solange alles nach ihren Vorstellungen läuft. Sie schlafen, entspannen, und sind erstaunlich genügsam.
               Aber wehe, der Butler lässt sie zu lange im Kalten stehen. Dann gibt es diesen Blick.
               Kurz. Vernichtend. Unmissverständlich.
@@ -187,9 +187,9 @@ export default function RassenPage() {
               alt="Siamkatze"
               width={600}
               height={500}
-              className="rounded-2xl w-full object-cover border border-[#2a2a2a]"
+              className="rounded-2xl w-full object-cover border border-border"
             />
-            <p className="text-zinc-600 text-xs mt-2 text-center">
+            <p className="text-muted-foreground text-xs mt-2 text-center">
               Siamkatze — unverwechselbare blaue Augen und das klassische Point-Muster
             </p>
           </div>
@@ -209,8 +209,8 @@ export default function RassenPage() {
                   <div className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">{trait.icon}</span>
                     <div>
-                      <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-1">{trait.label}</div>
-                      <div className="text-sm text-zinc-300 leading-relaxed">{trait.value}</div>
+                      <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">{trait.label}</div>
+                      <div className="text-sm text-foreground leading-relaxed">{trait.value}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -222,8 +222,8 @@ export default function RassenPage() {
         {/* Fun Fact */}
         <div className="mt-6 p-5 rounded-xl bg-[#ff3e8a]/5 border border-[#ff3e8a]/20">
           <p className="text-[#ff3e8a] text-sm font-semibold mb-1">💡 Wusstest du?</p>
-          <p className="text-zinc-300 text-sm leading-relaxed">
-            Siamkatzen sind <strong className="text-white">soziale Wesen</strong> und leiden unter Einsamkeit.
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            Siamkatzen sind <strong className="text-foreground">soziale Wesen</strong> und leiden unter Einsamkeit.
             Viele Experten empfehlen, sie zu zweit zu halten — was erklärt, warum Gina Lucy
             ins Haus eingeladen hat. Offiziell. Behauptet sie jedenfalls.
           </p>
@@ -237,26 +237,26 @@ export default function RassenPage() {
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <div className="flex items-center gap-3 mb-8">
-          <div className="h-px flex-1 bg-[#2a2a2a]" />
-          <span className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">Vergleich</span>
-          <div className="h-px flex-1 bg-[#2a2a2a]" />
+          <div className="h-px flex-1 bg-border" />
+          <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Vergleich</span>
+          <div className="h-px flex-1 bg-border" />
         </div>
 
-        <h2 className="text-2xl font-black tracking-tighter mb-6 text-center">
-          Maine Coon <span className="text-zinc-600">vs.</span> Siamkatze
+        <h2 className="text-2xl font-black tracking-tighter mb-6 text-center text-foreground">
+          Maine Coon <span className="text-muted-foreground">vs.</span> Siamkatze
         </h2>
 
-        <div className="rounded-2xl border border-[#2a2a2a] overflow-hidden">
+        <div className="rounded-2xl border border-border overflow-hidden">
           {/* Table Header */}
-          <div className="grid grid-cols-3 bg-[#111111] border-b border-[#2a2a2a]">
-            <div className="p-4 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Eigenschaft</div>
-            <div className="p-4 text-xs font-semibold text-amber-400 uppercase tracking-wider border-l border-[#2a2a2a]">
+          <div className="grid grid-cols-3 bg-card border-b border-border">
+            <div className="p-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Eigenschaft</div>
+            <div className="p-4 text-xs font-semibold text-amber-400 uppercase tracking-wider border-l border-border">
               🦁 Maine Coon
-              <span className="block text-zinc-600 normal-case tracking-normal font-normal">Lucy</span>
+              <span className="block text-muted-foreground normal-case tracking-normal font-normal">Lucy</span>
             </div>
-            <div className="p-4 text-xs font-semibold text-[#ff3e8a] uppercase tracking-wider border-l border-[#2a2a2a]">
+            <div className="p-4 text-xs font-semibold text-[#ff3e8a] uppercase tracking-wider border-l border-border">
               👁️ Siamkatze
-              <span className="block text-zinc-600 normal-case tracking-normal font-normal">Gina</span>
+              <span className="block text-muted-foreground normal-case tracking-normal font-normal">Gina</span>
             </div>
           </div>
 
@@ -264,17 +264,16 @@ export default function RassenPage() {
           {comparison.map((row, i) => (
             <div
               key={row.trait}
-              className={`grid grid-cols-3 border-b border-[#2a2a2a] last:border-0 ${i % 2 === 0 ? 'bg-[#0a0a0a]' : 'bg-[#0d0d0d]'}`}
+              className={`grid grid-cols-3 border-b border-border last:border-0 ${i % 2 === 0 ? 'bg-background' : 'bg-subtle'}`}
             >
-              <div className="p-4 text-sm text-zinc-500 font-medium">{row.trait}</div>
-              <div className="p-4 text-sm text-zinc-300 border-l border-[#2a2a2a]">{row.maineCoon}</div>
-              <div className="p-4 text-sm text-zinc-300 border-l border-[#2a2a2a]">{row.siamese}</div>
+              <div className="p-4 text-sm text-muted-foreground font-medium">{row.trait}</div>
+              <div className="p-4 text-sm text-foreground border-l border-border">{row.maineCoon}</div>
+              <div className="p-4 text-sm text-foreground border-l border-border">{row.siamese}</div>
             </div>
           ))}
         </div>
 
-        {/* Bottom note */}
-        <p className="text-zinc-600 text-xs text-center mt-6 leading-relaxed">
+        <p className="text-muted-foreground text-xs text-center mt-6 leading-relaxed">
           Alle Angaben beziehen sich auf typische Rassemerkmale. Gina & Lucy behalten sich vor, alle Statistiken
           zu ignorieren und ihr eigenes Ding zu machen. Wie immer.
         </p>

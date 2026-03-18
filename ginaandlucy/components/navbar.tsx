@@ -23,15 +23,15 @@ export function Navbar() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#2a2a2a] dark:border-[#2a2a2a] light:border-zinc-200 bg-[#0a0a0a]/90 dark:bg-[#0a0a0a]/90 light:bg-white/90 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-lg tracking-tight">
             <span className="text-2xl">🐾</span>
-            <span className="text-white dark:text-white light:text-zinc-900">gina</span>
+            <span className="text-foreground">gina</span>
             <span className="text-[#ff3e8a]">&</span>
-            <span className="text-white dark:text-white light:text-zinc-900">lucy</span>
+            <span className="text-foreground">lucy</span>
           </Link>
 
           {/* Desktop nav */}
@@ -44,7 +44,7 @@ export function Navbar() {
                   'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
                   pathname === link.href
                     ? 'bg-[#ff3e8a]/10 text-[#ff3e8a]'
-                    : 'text-zinc-400 hover:text-white hover:bg-white/5'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 )}
               >
                 {link.label}
@@ -67,7 +67,7 @@ export function Navbar() {
             <LangToggle />
             <ThemeToggle />
             <button
-              className="p-2 text-zinc-400 hover:text-white"
+              className="p-2 text-muted-foreground hover:text-foreground"
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
             >
@@ -78,7 +78,7 @@ export function Navbar() {
 
         {/* Mobile nav */}
         {open && (
-          <div className="md:hidden pb-4 border-t border-[#2a2a2a] mt-0 pt-4 flex flex-col gap-1">
+          <div className="md:hidden pb-4 border-t border-border mt-0 pt-4 flex flex-col gap-1">
             {links.map((link) => (
               <Link
                 key={link.href}
@@ -88,7 +88,7 @@ export function Navbar() {
                   'px-4 py-3 rounded-lg text-sm font-medium transition-colors',
                   pathname === link.href
                     ? 'bg-[#ff3e8a]/10 text-[#ff3e8a]'
-                    : 'text-zinc-400 hover:text-white hover:bg-white/5'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 )}
               >
                 {link.label}

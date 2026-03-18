@@ -38,11 +38,11 @@ export default function HomePage() {
               life of{' '}
               <span className="text-[#a855f7]">Gina</span>
               <br />
-              <span className="text-zinc-400">&</span>{' '}
+              <span className="text-muted-foreground">&</span>{' '}
               <span className="text-[#ff3e8a]">Lucy</span>
             </h1>
 
-            <p className="text-zinc-400 text-lg max-w-md mb-8 leading-relaxed">
+            <p className="text-muted-foreground text-lg max-w-md mb-8 leading-relaxed">
               Gina schläft. Lucy regiert. Der Butler überlebt.
               Folge dem größten Katzen-Imperium Münchens. 🐾
             </p>
@@ -60,14 +60,14 @@ export default function HomePage() {
               </a>
               <a
                 href="#"
-                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] text-white font-semibold text-sm hover:bg-[#2a2a2a] transition-colors"
+                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-card border border-border text-foreground font-semibold text-sm hover:bg-muted transition-colors"
               >
                 <Youtube className="h-4 w-4" />
                 YouTube
               </a>
               <Link
                 href="/merch"
-                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] text-white font-semibold text-sm hover:bg-[#2a2a2a] transition-colors"
+                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-card border border-border text-foreground font-semibold text-sm hover:bg-muted transition-colors"
               >
                 <ShoppingBag className="h-4 w-4" />
                 Merch Shop
@@ -78,8 +78,8 @@ export default function HomePage() {
             <div className="flex gap-8">
               {stats.map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-xs text-zinc-500 mt-0.5">{stat.label}</div>
+                  <div className="text-2xl font-bold text-foreground">{stat.value}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -120,8 +120,8 @@ export default function HomePage() {
           ].map((item) => (
             <Card key={item.title} className="p-6 group hover:border-[#ff3e8a]/40 transition-colors">
               <div className="text-3xl mb-3">{item.emoji}</div>
-              <h3 className="font-semibold text-white mb-2">{item.title}</h3>
-              <p className="text-zinc-400 text-sm mb-4 leading-relaxed">{item.desc}</p>
+              <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{item.desc}</p>
               <Link
                 href={item.href}
                 className="inline-flex items-center gap-1 text-[#ff3e8a] text-sm font-medium hover:gap-2 transition-all"

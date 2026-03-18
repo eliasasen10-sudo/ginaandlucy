@@ -20,7 +20,6 @@ const reels = [
 function ReelCard({ reel }: { reel: typeof reels[0] }) {
   const [liked, setLiked] = useState(false)
 
-  // Persist likes in localStorage
   useEffect(() => {
     const saved = localStorage.getItem(`liked-reel-${reel.id}`)
     if (saved === 'true') setLiked(true)
@@ -32,7 +31,7 @@ function ReelCard({ reel }: { reel: typeof reels[0] }) {
   }
 
   return (
-    <div className="group relative rounded-xl overflow-hidden border border-[#2a2a2a] hover:border-[#ff3e8a]/40 transition-all duration-300 cursor-pointer">
+    <div className="group relative rounded-xl overflow-hidden border border-border hover:border-[#ff3e8a]/40 transition-all duration-300 cursor-pointer">
       <Image
         src={reel.image}
         alt={reel.label}
@@ -75,17 +74,17 @@ export default function FeedPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff3e8a]/10 border border-[#ff3e8a]/20 text-[#ff3e8a] text-xs font-medium mb-4">
           🎬 Reels Feed
         </div>
-        <h1 className="text-4xl sm:text-5xl font-black tracking-tighter mb-4">
+        <h1 className="text-4xl sm:text-5xl font-black tracking-tighter mb-4 text-foreground">
           Die besten <span className="text-[#ff3e8a]">Momente</span>
         </h1>
-        <p className="text-zinc-400 text-lg max-w-xl mx-auto">
+        <p className="text-muted-foreground text-lg max-w-xl mx-auto">
           Hover zum Anschauen. ❤️ zum Liken. Das Chaos ist gratis.
         </p>
       </motion.div>
 
-      {/* Profile strip (like Instagram) */}
+      {/* Profile strip */}
       <motion.div
-        className="flex items-center gap-4 mb-8 p-4 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a]"
+        className="flex items-center gap-4 mb-8 p-4 rounded-xl bg-card border border-border"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
@@ -99,14 +98,14 @@ export default function FeedPage() {
           />
         </div>
         <div className="flex-1">
-          <div className="font-bold text-white">ginaandlucy.official</div>
-          <div className="text-zinc-400 text-sm">Digital Creator · München</div>
+          <div className="font-bold text-foreground">ginaandlucy.official</div>
+          <div className="text-muted-foreground text-sm">Digital Creator · München</div>
         </div>
         <div className="hidden sm:flex gap-6 text-center">
           {[['131', 'Beiträge'], ['14.200', 'Follower'], ['5', 'Gefolgt']].map(([val, label]) => (
             <div key={label}>
-              <div className="font-bold text-white text-sm">{val}</div>
-              <div className="text-zinc-500 text-xs">{label}</div>
+              <div className="font-bold text-foreground text-sm">{val}</div>
+              <div className="text-muted-foreground text-xs">{label}</div>
             </div>
           ))}
         </div>
