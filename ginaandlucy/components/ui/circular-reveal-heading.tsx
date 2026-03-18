@@ -90,18 +90,18 @@ export const CircularRevealHeading = ({ items, centerText, className, size = 'md
 
   return (
     <motion.div
-      whileHover={{ boxShadow: '20px 20px 40px hsl(0 0% 74%), -20px -20px 40px hsl(0 0% 100%)' }}
+      whileHover={{ boxShadow: '20px 20px 40px #bebebe, -20px -20px 40px #ffffff' }}
       whileTap={{ scale: 0.98 }}
       animate={{ y: [0, -8, 0] }}
       transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-      className={cn('relative overflow-hidden', config.container, 'rounded-full bg-muted', 'shadow-[16px_16px_32px_hsl(0_0%_74%),-16px_-16px_32px_hsl(0_0%_100%)] dark:shadow-[16px_16px_32px_hsl(0_0%_5%),-16px_-16px_32px_hsl(0_0%_20%)]', className)}
+      className={cn('relative overflow-hidden', config.container, 'rounded-full bg-[#e6e6e6]', 'shadow-[16px_16px_32px_#bebebe,-16px_-16px_32px_#ffffff]', className)}
     >
       <AnimatePresence>
         {activeImage && imagesLoaded && <ImageOverlay image={activeImage} size={size} />}
       </AnimatePresence>
 
-      <motion.div className="absolute inset-[2px] rounded-full bg-muted" style={{ boxShadow: 'inset 6px 6px 12px hsl(0 0% 82%), inset -6px -6px 12px hsl(0 0% 100%)' }} />
-      <motion.div className="absolute inset-[12px] rounded-full bg-muted" style={{ boxShadow: 'inset 4px 4px 8px hsl(0 0% 82%), inset -4px -4px 8px hsl(0 0% 100%)' }} />
+      <motion.div className="absolute inset-[2px] rounded-full bg-[#e6e6e6]" style={{ boxShadow: 'inset 6px 6px 12px #d1d1d1, inset -6px -6px 12px #ffffff' }} />
+      <motion.div className="absolute inset-[12px] rounded-full bg-[#e6e6e6]" style={{ boxShadow: 'inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff' }} />
 
       <motion.div className="absolute inset-0 flex items-center justify-center">
         <AnimatePresence>
@@ -109,8 +109,8 @@ export const CircularRevealHeading = ({ items, centerText, className, size = 'md
             <motion.div
               initial={{ opacity: 1 }} exit={{ opacity: 0 }} animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
-              className="relative z-10 p-6 rounded-3xl bg-muted"
-              whileHover={{ boxShadow: 'inset 3px 3px 6px hsl(0 0% 82%), inset -3px -3px 6px hsl(0 0% 100%)' }}
+              className="relative z-10 p-6 rounded-3xl bg-[#e6e6e6]"
+              whileHover={{ boxShadow: 'inset 3px 3px 6px #d1d1d1, inset -3px -3px 6px #ffffff' }}
             >
               {centerText}
             </motion.div>
