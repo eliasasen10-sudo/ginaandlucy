@@ -6,77 +6,17 @@ import { HeartFavorite } from '@/components/ui/heart-favorite-shadcnui'
 import { ShoppingCart, Star } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useLanguage } from '@/components/providers'
 
-const products = [
-  {
-    id: 1,
-    name: '"Professional Couch Tester" Hoodie',
-    price: '39,99',
-    category: 'Kleidung',
-    rating: 4.9,
-    reviews: 142,
-    badge: '🔥 Bestseller',
-    image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=Hoodie+🐾',
-    desc: 'Für alle, die Ginas Lebensstil teilen. Weich, warm, lazy.',
-  },
-  {
-    id: 2,
-    name: 'Gina & Lucy Tasse',
-    price: '14,99',
-    category: 'Küche',
-    rating: 5.0,
-    reviews: 89,
-    badge: '⭐ Top-Rated',
-    image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=Tasse+☕',
-    desc: 'Kaffee schmeckt besser mit Katzengesichtern drauf. Wissenschaftlich bewiesen.',
-  },
-  {
-    id: 3,
-    name: '"Not lazy, conserving energy" T-Shirt',
-    price: '24,99',
-    category: 'Kleidung',
-    rating: 4.8,
-    reviews: 67,
-    badge: null,
-    image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=T-Shirt+😴',
-    desc: 'Lucys persönliche Lebensphilosophie, jetzt als tragbares Statement.',
-  },
-  {
-    id: 4,
-    name: 'Katzenpfoten-Socken (3er Pack)',
-    price: '9,99',
-    category: 'Accessoires',
-    rating: 4.7,
-    reviews: 213,
-    badge: '💕 Fan-Fav',
-    image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=Socken+🐾',
-    desc: 'Dreimal Pfötchen. Einmal Chaos. Immer cute.',
-  },
-  {
-    id: 5,
-    name: 'Handyhülle mit Siamkatzen-Print',
-    price: '19,99',
-    category: 'Tech',
-    rating: 4.6,
-    reviews: 54,
-    badge: '📱 Neu',
-    image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=Case+📱',
-    desc: 'Kompatibel mit iPhone & Samsung. Nicht kompatibel mit langweiligem Design.',
-  },
-  {
-    id: 6,
-    name: 'Gina & Lucy Katzen-Kissen',
-    price: '29,99',
-    category: 'Wohnen',
-    rating: 4.9,
-    reviews: 101,
-    badge: null,
-    image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=Kissen+🛋️',
-    desc: 'Für Couch-Tests der Spitzenklasse. Gina-approved.',
-  },
-]
-
-function MerchCard({ product }: { product: typeof products[0] }) {
+function MerchCard({ product }: {
+  product: {
+    id: number; nameDe: string; nameEn: string; price: string;
+    categoryDe: string; categoryEn: string; rating: number; reviews: number;
+    badgeDe: string | null; badgeEn: string | null; image: string;
+    descDe: string; descEn: string;
+  }
+}) {
+  const { t } = useLanguage()
   const [inCart, setInCart] = useState(false)
 
   return (
@@ -84,14 +24,14 @@ function MerchCard({ product }: { product: typeof products[0] }) {
       <div className="relative overflow-hidden">
         <Image
           src={product.image}
-          alt={product.name}
+          alt={t(product.nameDe, product.nameEn)}
           width={400}
           height={400}
           className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        {product.badge && (
+        {product.badgeDe && (
           <span className="absolute top-3 left-3 px-2 py-1 rounded-md bg-background/80 text-foreground text-xs font-medium backdrop-blur-sm">
-            {product.badge}
+            {t(product.badgeDe, product.badgeEn ?? product.badgeDe)}
           </span>
         )}
         <div className="absolute top-2 right-2">
@@ -101,16 +41,20 @@ function MerchCard({ product }: { product: typeof products[0] }) {
 
       <CardContent className="p-4">
         <div className="flex items-start justify-between gap-2 mb-1">
-          <span className="text-[10px] uppercase tracking-wider text-[#ff3e8a] font-semibold">{product.category}</span>
+          <span className="text-[10px] uppercase tracking-wider text-[#ff3e8a] font-semibold">
+            {t(product.categoryDe, product.categoryEn)}
+          </span>
           <div className="flex items-center gap-1 text-xs text-muted-foreground">
             <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
             {product.rating} ({product.reviews})
           </div>
         </div>
-
-        <h3 className="font-semibold text-foreground text-sm mb-1 leading-snug">{product.name}</h3>
-        <p className="text-muted-foreground text-xs mb-3 leading-relaxed">{product.desc}</p>
-
+        <h3 className="font-semibold text-foreground text-sm mb-1 leading-snug">
+          {t(product.nameDe, product.nameEn)}
+        </h3>
+        <p className="text-muted-foreground text-xs mb-3 leading-relaxed">
+          {t(product.descDe, product.descEn)}
+        </p>
         <div className="flex items-center justify-between">
           <span className="text-xl font-bold text-foreground">{product.price}€</span>
           <button
@@ -122,7 +66,7 @@ function MerchCard({ product }: { product: typeof products[0] }) {
             }`}
           >
             <ShoppingCart className="h-3.5 w-3.5" />
-            {inCart ? 'Im Warenkorb' : 'In den Warenkorb'}
+            {inCart ? t('Im Warenkorb', 'In cart') : t('In den Warenkorb', 'Add to cart')}
           </button>
         </div>
       </CardContent>
@@ -131,6 +75,101 @@ function MerchCard({ product }: { product: typeof products[0] }) {
 }
 
 export default function MerchPage() {
+  const { t } = useLanguage()
+
+  const products = [
+    {
+      id: 1,
+      nameDe: '"Professional Couch Tester" Hoodie',
+      nameEn: '"Professional Couch Tester" Hoodie',
+      price: '39,99',
+      categoryDe: 'Kleidung',
+      categoryEn: 'Clothing',
+      rating: 4.9,
+      reviews: 142,
+      badgeDe: '🔥 Bestseller',
+      badgeEn: '🔥 Bestseller',
+      image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=Hoodie+🐾',
+      descDe: 'Für alle, die Ginas Lebensstil teilen. Weich, warm, lazy.',
+      descEn: "For everyone who shares Gina's lifestyle. Soft, warm, lazy.",
+    },
+    {
+      id: 2,
+      nameDe: 'Gina & Lucy Tasse',
+      nameEn: 'Gina & Lucy Mug',
+      price: '14,99',
+      categoryDe: 'Küche',
+      categoryEn: 'Kitchen',
+      rating: 5.0,
+      reviews: 89,
+      badgeDe: '⭐ Top-Rated',
+      badgeEn: '⭐ Top-Rated',
+      image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=Tasse+☕',
+      descDe: 'Kaffee schmeckt besser mit Katzengesichtern drauf. Wissenschaftlich bewiesen.',
+      descEn: 'Coffee tastes better with cat faces on it. Scientifically proven.',
+    },
+    {
+      id: 3,
+      nameDe: '"Not lazy, conserving energy" T-Shirt',
+      nameEn: '"Not lazy, conserving energy" T-Shirt',
+      price: '24,99',
+      categoryDe: 'Kleidung',
+      categoryEn: 'Clothing',
+      rating: 4.8,
+      reviews: 67,
+      badgeDe: null,
+      badgeEn: null,
+      image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=T-Shirt+😴',
+      descDe: 'Lucys persönliche Lebensphilosophie, jetzt als tragbares Statement.',
+      descEn: "Lucy's personal life philosophy, now as a wearable statement.",
+    },
+    {
+      id: 4,
+      nameDe: 'Katzenpfoten-Socken (3er Pack)',
+      nameEn: 'Cat Paw Socks (3-pack)',
+      price: '9,99',
+      categoryDe: 'Accessoires',
+      categoryEn: 'Accessories',
+      rating: 4.7,
+      reviews: 213,
+      badgeDe: '💕 Fan-Fav',
+      badgeEn: '💕 Fan-Fav',
+      image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=Socken+🐾',
+      descDe: 'Dreimal Pfötchen. Einmal Chaos. Immer cute.',
+      descEn: 'Three paws. One chaos. Always cute.',
+    },
+    {
+      id: 5,
+      nameDe: 'Handyhülle mit Siamkatzen-Print',
+      nameEn: 'Phone Case with Siamese Print',
+      price: '19,99',
+      categoryDe: 'Tech',
+      categoryEn: 'Tech',
+      rating: 4.6,
+      reviews: 54,
+      badgeDe: '📱 Neu',
+      badgeEn: '📱 New',
+      image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=Case+📱',
+      descDe: 'Kompatibel mit iPhone & Samsung. Nicht kompatibel mit langweiligem Design.',
+      descEn: 'Compatible with iPhone & Samsung. Not compatible with boring design.',
+    },
+    {
+      id: 6,
+      nameDe: 'Gina & Lucy Katzen-Kissen',
+      nameEn: 'Gina & Lucy Cat Pillow',
+      price: '29,99',
+      categoryDe: 'Wohnen',
+      categoryEn: 'Home',
+      rating: 4.9,
+      reviews: 101,
+      badgeDe: null,
+      badgeEn: null,
+      image: 'https://placehold.co/400x400/1a1a1a/ff3e8a?text=Kissen+🛋️',
+      descDe: 'Für Couch-Tests der Spitzenklasse. Gina-approved.',
+      descEn: 'For top-class couch testing. Gina-approved.',
+    },
+  ]
+
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
       {/* Header */}
@@ -141,14 +180,16 @@ export default function MerchPage() {
         transition={{ duration: 0.6 }}
       >
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff3e8a]/10 border border-[#ff3e8a]/20 text-[#ff3e8a] text-xs font-medium mb-4">
-          🛍️ Official Merch
+          🛍️ {t('Offizieller Merch', 'Official Merch')}
         </div>
         <h1 className="text-4xl sm:text-5xl font-black tracking-tighter mb-4 text-foreground">
-          Der <span className="text-[#ff3e8a]">Shop</span>
+          {t('Der', 'The')} <span className="text-[#ff3e8a]">{t('Shop', 'Shop')}</span>
         </h1>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-          Trag das Chaos mit Stolz. 100% Gina & Lucy approved.
-          Der Butler bekommt keine Provision.
+          {t(
+            'Trag das Chaos mit Stolz. 100% Gina & Lucy approved. Der Butler bekommt keine Provision.',
+            'Wear the chaos with pride. 100% Gina & Lucy approved. The butler gets no commission.'
+          )}
         </p>
       </motion.div>
 
@@ -162,11 +203,20 @@ export default function MerchPage() {
         <div className="flex items-center gap-3">
           <span className="text-2xl">🎁</span>
           <div>
-            <p className="font-semibold text-foreground text-sm">Gratis Versand ab 49€</p>
-            <p className="text-muted-foreground text-xs">Nur noch wenig und Gina schickt es persönlich. Fast.</p>
+            <p className="font-semibold text-foreground text-sm">
+              {t('Gratis Versand ab 49€', 'Free shipping from €49')}
+            </p>
+            <p className="text-muted-foreground text-xs">
+              {t(
+                'Nur noch wenig und Gina schickt es persönlich. Fast.',
+                'Just a little more and Gina will ship it personally. Almost.'
+              )}
+            </p>
           </div>
         </div>
-        <span className="text-[#ff3e8a] font-bold text-sm whitespace-nowrap">Code: PFOETCHEN10</span>
+        <span className="text-[#ff3e8a] font-bold text-sm whitespace-nowrap">
+          {t('Code:', 'Code:')} PFOETCHEN10
+        </span>
       </motion.div>
 
       {/* Product Grid */}

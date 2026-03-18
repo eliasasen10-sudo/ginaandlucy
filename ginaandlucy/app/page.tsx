@@ -6,14 +6,50 @@ import { Card } from '@/components/ui/card'
 import Link from 'next/link'
 import { Instagram, Youtube, ShoppingBag, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
-
-const stats = [
-  { label: 'Beiträge', value: '131' },
-  { label: 'Follower', value: '14.200' },
-  { label: 'Gefolgt', value: '5' },
-]
+import { useLanguage } from '@/components/providers'
 
 export default function HomePage() {
+  const { t } = useLanguage()
+
+  const stats = [
+    { label: t('Beiträge', 'Posts'), value: '131' },
+    { label: t('Follower', 'Followers'), value: '14.200' },
+    { label: t('Gefolgt', 'Following'), value: '5' },
+  ]
+
+  const quickLinks = [
+    {
+      emoji: '📖',
+      title: t('Unsere Geschichte', 'Our Story'),
+      desc: t(
+        'Erfahre wie eine Siamkatze und eine Maine Coon die Weltherrschaft planen.',
+        'Learn how a Siamese cat and a Maine Coon are planning world domination.'
+      ),
+      href: '/about',
+      label: t('Zur Story', 'Read the Story'),
+    },
+    {
+      emoji: '🛍️',
+      title: t('Merch Shop', 'Merch Shop'),
+      desc: t(
+        'Hoodies, Tassen, Socken — alles mit Katzenfaktor.',
+        'Hoodies, mugs, socks — all with cat factor.'
+      ),
+      href: '/merch',
+      label: t('Zum Shop', 'To the Shop'),
+    },
+    {
+      emoji: '🎬',
+      title: t('Meme Feed', 'Meme Feed'),
+      desc: t(
+        'Die besten Momente. Mit Like-Button. Natürlich.',
+        'The best moments. With a like button. Obviously.'
+      ),
+      href: '/feed',
+      label: t('Zum Feed', 'To the Feed'),
+    },
+  ]
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -34,8 +70,8 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.05] mb-6">
-              The chaotic<br />
-              life of{' '}
+              {t('Das chaotische', 'The chaotic')}<br />
+              {t('Leben von', 'life of')}{' '}
               <span className="text-[#a855f7]">Gina</span>
               <br />
               <span className="text-muted-foreground">&</span>{' '}
@@ -43,8 +79,10 @@ export default function HomePage() {
             </h1>
 
             <p className="text-muted-foreground text-lg max-w-md mb-8 leading-relaxed">
-              Gina schläft. Lucy regiert. Der Butler überlebt.
-              Folge dem größten Katzen-Imperium Münchens. 🐾
+              {t(
+                'Gina schläft. Lucy regiert. Der Butler überlebt. Folge dem größten Katzen-Imperium Münchens. 🐾',
+                "Gina sleeps. Lucy rules. The butler survives. Follow Munich's biggest cat empire. 🐾"
+              )}
             </p>
 
             {/* CTA Buttons */}
@@ -70,7 +108,7 @@ export default function HomePage() {
                 className="flex items-center gap-2 px-5 py-3 rounded-xl bg-card border border-border text-foreground font-semibold text-sm hover:bg-muted transition-colors"
               >
                 <ShoppingBag className="h-4 w-4" />
-                Merch Shop
+                {t('Merch Shop', 'Merch Shop')}
               </Link>
             </div>
 
@@ -95,29 +133,7 @@ export default function HomePage() {
       {/* Quick links section */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {[
-            {
-              emoji: '📖',
-              title: 'Unsere Geschichte',
-              desc: 'Erfahre wie eine Siamkatze und eine Maine Coon die Weltherrschaft planen.',
-              href: '/about',
-              label: 'Zur Story',
-            },
-            {
-              emoji: '🛍️',
-              title: 'Merch Shop',
-              desc: 'Hoodies, Tassen, Socken — alles mit Katzenfaktor.',
-              href: '/merch',
-              label: 'Zum Shop',
-            },
-            {
-              emoji: '🎬',
-              title: 'Meme Feed',
-              desc: 'Die besten Momente. Mit Like-Button. Natürlich.',
-              href: '/feed',
-              label: 'Zum Feed',
-            },
-          ].map((item) => (
+          {quickLinks.map((item) => (
             <Card key={item.title} className="p-6 group hover:border-[#ff3e8a]/40 transition-colors">
               <div className="text-3xl mb-3">{item.emoji}</div>
               <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
