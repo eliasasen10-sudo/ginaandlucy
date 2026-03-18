@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Timeline } from '@/components/ui/timeline'
 import { BlurredStagger } from '@/components/ui/blurred-stagger-text'
+import { CircularRevealHeading } from '@/components/ui/circular-reveal-heading'
 import Image from 'next/image'
 import { useLanguage } from '@/components/providers'
 
@@ -260,11 +261,48 @@ export default function AboutPage() {
       </div>
 
       {/* Timeline */}
-      <div>
+      <div className="mb-20">
         <h2 className="text-2xl font-bold mb-2 text-center text-foreground">
           <BlurredStagger text={t('Die Karriere-Timeline', 'The Career Timeline')} stagger={0.04} />
         </h2>
         <Timeline data={timelineData} />
+      </div>
+
+      {/* Lebensmotto */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold mb-10 text-center text-foreground">
+          <BlurredStagger text={t('Unser Lebensmotto', 'Our Life Motto')} stagger={0.04} />
+        </h2>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
+          <div className="flex flex-col items-center gap-3">
+            <CircularRevealHeading
+              size="md"
+              items={[
+                { text: 'SCHLAFEN', image: '/gini.jpeg' },
+                { text: 'ESSEN', image: '/gini.jpeg' },
+                { text: 'SCHLAFEN', image: '/gini.jpeg' },
+                { text: 'ESSEN', image: '/gini.jpeg' },
+              ]}
+              centerText={
+                <span className="text-foreground font-bold text-lg">Gina</span>
+              }
+            />
+          </div>
+          <div className="flex flex-col items-center gap-3">
+            <CircularRevealHeading
+              size="md"
+              items={[
+                { text: 'KRATZEN', image: '/Lucy.png' },
+                { text: 'SCHLAFEN', image: '/Lucy.png' },
+                { text: 'KRATZEN', image: '/Lucy.png' },
+                { text: 'SCHLAFEN', image: '/Lucy.png' },
+              ]}
+              centerText={
+                <span className="text-foreground font-bold text-lg">Lucy</span>
+              }
+            />
+          </div>
+        </div>
       </div>
     </div>
   )
