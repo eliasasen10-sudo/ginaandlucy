@@ -3,10 +3,12 @@
 import { LucyCursor } from '@/components/ui/lucy-cursor'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Card } from '@/components/ui/card'
+import { ContainerScroll } from '@/components/ui/container-scroll-animation'
 import Link from 'next/link'
 import { Instagram, Youtube, ShoppingBag, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/components/providers'
+import Image from 'next/image'
 
 export default function HomePage() {
   const { t } = useLanguage()
@@ -129,6 +131,55 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Scroll Animation Section */}
+      <ContainerScroll
+        titleComponent={
+          <div className="mb-6">
+            <p className="text-muted-foreground text-sm font-medium uppercase tracking-widest mb-3">
+              {t('Das Imperium in Bildern', 'The empire in pictures')}
+            </p>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-foreground leading-tight">
+              {t('Gina schläft.', 'Gina sleeps.')}<br />
+              <span className="text-[#a855f7]">{t('Lucy regiert.', 'Lucy rules.')}</span>{' '}
+              <span className="text-[#ff3e8a]">{t('Chaos garantiert.', 'Chaos guaranteed.')}</span>
+            </h2>
+          </div>
+        }
+      >
+        <div className="h-full w-full grid grid-cols-2 gap-3 p-2">
+          <div className="relative rounded-xl overflow-hidden">
+            <Image
+              src="/gini.jpeg"
+              alt="Gina"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+              <div className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-[#a855f7]" />
+                <span className="text-white text-xs font-semibold">Gina</span>
+                <span className="text-white/60 text-xs">{t('Siamkatze', 'Siamese cat')}</span>
+              </div>
+            </div>
+          </div>
+          <div className="relative rounded-xl overflow-hidden">
+            <Image
+              src="/Lucy.png"
+              alt="Lucy"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+              <div className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-[#ff3e8a]" />
+                <span className="text-white text-xs font-semibold">Lucy</span>
+                <span className="text-white/60 text-xs">Maine Coon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ContainerScroll>
 
       {/* Quick links section */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
