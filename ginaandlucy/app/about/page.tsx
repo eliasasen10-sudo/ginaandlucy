@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Timeline } from '@/components/ui/timeline'
+import { BlurredStagger } from '@/components/ui/blurred-stagger-text'
 import Image from 'next/image'
 import { useLanguage } from '@/components/providers'
 
@@ -137,17 +138,21 @@ export default function AboutPage() {
         transition={{ duration: 0.6 }}
       >
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff3e8a]/10 border border-[#ff3e8a]/20 text-[#ff3e8a] text-xs font-medium mb-4">
-          📖 {t('Die echte Geschichte', 'The real story')}
+          📖 <BlurredStagger text={t('Die echte Geschichte', 'The real story')} stagger={0.03} />
         </div>
         <h1 className="text-4xl sm:text-5xl font-black tracking-tighter mb-4 text-foreground">
-          {t('Wer sind', 'Who are')}{' '}
-          <span className="text-[#ff3e8a]">Gina & Lucy</span>?
+          <BlurredStagger text={t('Wer sind', 'Who are')} stagger={0.04} />{' '}
+          <span className="text-[#ff3e8a]"><BlurredStagger text="Gina & Lucy" stagger={0.04} /></span>?
         </h1>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-          {t(
-            'Eine Siamkatze & eine Maine Coon. Ein Apartment in München. Ein überarbeiteter Butler. Eine Mission: die Weltherrschaft. Das ist ihre Geschichte. Weitgehend wahr. Meistens.',
-            'A Siamese cat & a Maine Coon. An apartment in Munich. An overworked butler. One mission: world domination. This is their story. Mostly true. Usually.'
-          )}
+          <BlurredStagger
+            text={t(
+              'Eine Siamkatze & eine Maine Coon. Ein Apartment in München. Ein überarbeiteter Butler. Eine Mission: die Weltherrschaft. Das ist ihre Geschichte. Weitgehend wahr. Meistens.',
+              'A Siamese cat & a Maine Coon. An apartment in Munich. An overworked butler. One mission: world domination. This is their story. Mostly true. Usually.'
+            )}
+            stagger={0.008}
+            duration={0.2}
+          />
         </p>
       </motion.div>
 
@@ -169,10 +174,14 @@ export default function AboutPage() {
         <div className="space-y-4 text-muted-foreground leading-relaxed">
           <p>
             <strong className="text-foreground">Gina</strong>{' '}
-            {t(
-              'ist die Entspannung in Katzenform. Sie schläft den ganzen Tag und nutzt jede bequeme Gelegenheit die sich bietet. Sofa, Laptop, Gesicht der Familie. Alles gut. Sie ist die unkomplizierteste Person im Haushalt, solange die Familie sie nicht zu lange draußen warten lässt. Dann gibt es einen Blick der keine weiteren Erklärungen braucht.',
-              'is relaxation in cat form. She sleeps all day and takes every comfortable opportunity available. Sofa, laptop, family\'s face. All fine. She is the most uncomplicated person in the household — as long as the family doesn\'t make her wait outside too long. Then comes a look that needs no further explanation.'
-            )}
+            <BlurredStagger
+              text={t(
+                'ist die Entspannung in Katzenform. Sie schläft den ganzen Tag und nutzt jede bequeme Gelegenheit die sich bietet. Sofa, Laptop, Gesicht der Familie. Alles gut. Sie ist die unkomplizierteste Person im Haushalt, solange die Familie sie nicht zu lange draußen warten lässt. Dann gibt es einen Blick der keine weiteren Erklärungen braucht.',
+                "is relaxation in cat form. She sleeps all day and takes every comfortable opportunity available. Sofa, laptop, family's face. All fine. She is the most uncomplicated person in the household — as long as the family doesn't make her wait outside too long. Then comes a look that needs no further explanation."
+              )}
+              stagger={0.006}
+              duration={0.18}
+            />
           </p>
         </div>
       </motion.div>
@@ -195,42 +204,41 @@ export default function AboutPage() {
         <div className="space-y-4 text-muted-foreground leading-relaxed">
           <p>
             <strong className="text-foreground">Lucy</strong>{' '}
-            {t(
-              'ist nochmal eine ganz andere Geschichte. Sie ist dominant, eine echte Diva und lässt sich gar nichts sagen. Die Familie traut sich nicht mal sie hochzuheben weil das Risiko einfach zu groß ist. Kratzer, Fleischwunden, vollständige Niederlage. Sie hat 2023 den Thron übernommen und ist seitdem nicht mehr aufzuhalten. Ob die Familie noch lange im Haus bleiben darf ist täglich neu ungewiss.',
-              'is a completely different story. She is dominant, a total diva and takes no orders from anyone. The family doesn\'t even dare pick her up because the risk is simply too high. Scratches, wounds, total defeat. She took the throne in 2023 and has been unstoppable ever since. Whether the family gets to stay in the house is uncertain on a daily basis.'
-            )}
+            <BlurredStagger
+              text={t(
+                'ist nochmal eine ganz andere Geschichte. Sie ist dominant, eine echte Diva und lässt sich gar nichts sagen. Die Familie traut sich nicht mal sie hochzuheben weil das Risiko einfach zu groß ist. Kratzer, Fleischwunden, vollständige Niederlage. Sie hat 2023 den Thron übernommen und ist seitdem nicht mehr aufzuhalten. Ob die Familie noch lange im Haus bleiben darf ist täglich neu ungewiss.',
+                "is a completely different story. She is dominant, a total diva and takes no orders from anyone. The family doesn't even dare pick her up because the risk is simply too high. Scratches, wounds, total defeat. She took the throne in 2023 and has been unstoppable ever since. Whether the family gets to stay in the house is uncertain on a daily basis."
+              )}
+              stagger={0.006}
+              duration={0.18}
+            />
           </p>
         </div>
       </motion.div>
 
       {/* Closing sentence */}
-      <motion.p
-        className="text-muted-foreground text-center text-lg leading-relaxed mb-16 max-w-2xl mx-auto"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        {t(
-          '2026 hatten die beiden beim gemeinsamen Instagram-Scrollen auf dem Sofa der Familie die Idee:',
-          "In 2026, while scrolling Instagram together on the family's sofa, the two had the idea:"
-        )}{' '}
-        <strong className="text-foreground">
-          {t('selbst durchstarten.', 'to make it big themselves.')}
-        </strong>{' '}
-        {t(
-          'Seitdem wächst @ginaandlucy.official und das Ziel ist klar. Influencer werden, Internet-Stars sein, Weltherrschaft sichern.',
-          'Since then @ginaandlucy.official has been growing and the goal is clear: become influencers, be internet stars, secure world domination.'
-        )}
+      <p className="text-muted-foreground text-center text-lg leading-relaxed mb-16 max-w-2xl mx-auto">
+        <BlurredStagger
+          text={t(
+            '2026 hatten die beiden beim gemeinsamen Instagram-Scrollen auf dem Sofa der Familie die Idee: selbst durchstarten. Seitdem wächst @ginaandlucy.official und das Ziel ist klar. Influencer werden, Internet-Stars sein, Weltherrschaft sichern.',
+            "In 2026, while scrolling Instagram together on the family's sofa, the two had the idea: to make it big themselves. Since then @ginaandlucy.official has been growing and the goal is clear: become influencers, be internet stars, secure world domination."
+          )}
+          stagger={0.007}
+          duration={0.2}
+        />
         <br /><br />
         <span className="text-[#ff3e8a] font-medium">
-          {t('Der Plan läuft.', 'The plan is running.')} ©ginaandlucy | {t('Alle Rechte vorbehalten.', 'All Rights Reserved.')}
+          <BlurredStagger
+            text={`${t('Der Plan läuft.', 'The plan is running.')} ©ginaandlucy | ${t('Alle Rechte vorbehalten.', 'All Rights Reserved.')}`}
+            stagger={0.02}
+          />
         </span>
-      </motion.p>
+      </p>
 
       {/* Fun Facts */}
       <div className="mb-16">
         <h2 className="text-2xl font-bold mb-6 text-center text-foreground">
-          {t('Weitere Infos', 'More Info')}
+          <BlurredStagger text={t('Weitere Infos', 'More Info')} stagger={0.04} />
         </h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {funFacts.map((fact, i) => (
@@ -255,7 +263,7 @@ export default function AboutPage() {
       {/* Timeline */}
       <div>
         <h2 className="text-2xl font-bold mb-2 text-center text-foreground">
-          {t('Die Karriere-Timeline', 'The Career Timeline')}
+          <BlurredStagger text={t('Die Karriere-Timeline', 'The Career Timeline')} stagger={0.04} />
         </h2>
         <Timeline data={timelineData} />
       </div>
