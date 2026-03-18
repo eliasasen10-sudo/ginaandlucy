@@ -73,17 +73,24 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.05] mb-6">
-              {t('Das', 'The')}{' '}
+              {t('Das chaotische', 'The chaotic')}<br />
+              {t('Leben von', 'life of')}{' '}
               <SparklesText
-                text={t('chaotische', 'chaotic')}
-                className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter"
+                text="Gina"
+                className="text-[#a855f7]"
+                colors={{ first: '#a855f7', second: '#c084fc' }}
+                activeMs={2000}
+                pauseMs={5000}
               />
               <br />
-              {t('Leben von', 'life of')}{' '}
-              <span className="text-[#a855f7]">Gina</span>
-              <br />
               <span className="text-muted-foreground">&</span>{' '}
-              <span className="text-[#ff3e8a]">Lucy</span>
+              <SparklesText
+                text="Lucy"
+                className="text-[#ff3e8a]"
+                colors={{ first: '#ff3e8a', second: '#ff8a3e' }}
+                activeMs={2000}
+                pauseMs={5000}
+              />
             </h1>
 
             <p className="text-muted-foreground text-lg max-w-md mb-8 leading-relaxed">
