@@ -125,11 +125,15 @@ export const CircularRevealHeading = ({ items, centerText, className, size = 'md
           animate={{ rotate: 360 }}
           transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
         >
-          <img
-            src={rotatingImage}
-            alt=""
-            className="rounded-full object-cover"
-            style={{ width: '52%', height: '52%' }}
+          <div
+            className="rounded-full"
+            style={{
+              width: '52%',
+              height: '52%',
+              backgroundImage: `url(${rotatingImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
           />
         </motion.div>
       )}
