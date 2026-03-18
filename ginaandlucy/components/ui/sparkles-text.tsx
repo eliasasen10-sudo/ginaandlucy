@@ -52,14 +52,14 @@ const SparklesText: React.FC<SparklesTextProps> = ({
     let timeout: ReturnType<typeof setTimeout>;
 
     const runCycle = () => {
-      // pause phase
-      setIsActive(false);
+      // active phase first
+      setSparkles(generateSparkles());
+      setIsActive(true);
       timeout = setTimeout(() => {
-        // active phase — refresh sparkle positions each cycle
-        setSparkles(generateSparkles());
-        setIsActive(true);
-        timeout = setTimeout(runCycle, activeMs);
-      }, pauseMs);
+        // then pause
+        setIsActive(false);
+        timeout = setTimeout(runCycle, pauseMs);
+      }, activeMs);
     };
 
     runCycle();
