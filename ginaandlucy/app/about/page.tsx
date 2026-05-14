@@ -97,12 +97,12 @@ export default function AboutPage() {
       content: (
         <div>
           <h3 className="font-semibold text-foreground text-base mb-1">
-            {t('14.200 Follower & counting', '14,200 followers & counting')}
+            {t('22.800+ Follower & 1.48M Views', '22,800+ followers & 1.48M views')}
           </h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
             {t(
-              'Der Plan zur Weltherrschaft schreitet voran. Schritt 1 (viral gehen) ✅. Schritt 2 (???). Schritt 3 (Herrschaft) 🔜',
-              'The world domination plan is progressing. Step 1 (go viral) ✅. Step 2 (???). Step 3 (domination) 🔜'
+              'Instagram, YouTube, TikTok — überall dasselbe Chaos. Schritt 1 (viral gehen) ✅. Schritt 2 (Brands kommen rein). Schritt 3 (Herrschaft) 🔜',
+              'Instagram, YouTube, TikTok — same chaos everywhere. Step 1 (go viral) ✅. Step 2 (brands rolling in). Step 3 (domination) 🔜'
             )}
           </p>
         </div>
@@ -303,6 +303,46 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* CTA-Block: weiter erkunden */}
+      <div className="grid sm:grid-cols-2 gap-3 mt-8">
+        <a
+          href="/feed"
+          className="group p-6 rounded-2xl bg-card border border-border hover:border-[#ff3e8a]/40 transition-colors"
+        >
+          <div className="text-2xl mb-2">🎬</div>
+          <h3 className="font-semibold text-foreground mb-1">
+            {t('Sieh dir Reels an', 'Watch their reels')}
+          </h3>
+          <p className="text-muted-foreground text-sm">
+            {t(
+              'Die letzten Posts von Instagram & YouTube — live geladen.',
+              'The latest posts from Instagram & YouTube — loaded live.'
+            )}
+          </p>
+          <span className="text-[#ff3e8a] text-sm font-medium mt-3 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            {t('Zum Feed', 'To the feed')} →
+          </span>
+        </a>
+        <a
+          href="/press"
+          className="group p-6 rounded-2xl bg-card border border-border hover:border-[#ff3e8a]/40 transition-colors"
+        >
+          <div className="text-2xl mb-2">📩</div>
+          <h3 className="font-semibold text-foreground mb-1">
+            {t('Brand-Partnership?', 'Brand partnership?')}
+          </h3>
+          <p className="text-muted-foreground text-sm">
+            {t(
+              'Media-Kit, Audience-Daten, Pricing & Kontaktformular.',
+              'Media kit, audience data, pricing & contact form.'
+            )}
+          </p>
+          <span className="text-[#ff3e8a] text-sm font-medium mt-3 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            {t('Zur Press-Seite', 'To the press page')} →
+          </span>
+        </a>
       </div>
     </div>
   )

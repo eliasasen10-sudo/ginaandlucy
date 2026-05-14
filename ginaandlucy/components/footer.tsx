@@ -1,25 +1,124 @@
 'use client'
 
+import Link from 'next/link'
 import { useLanguage } from '@/components/providers'
+import { NewsletterSignup } from '@/components/newsletter-signup'
+import { Instagram, Youtube, Mail } from 'lucide-react'
 
 export function Footer() {
   const { t } = useLanguage()
+
   return (
     <footer className="border-t border-border mt-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2 font-bold">
-          <span className="text-xl">🐾</span>
-          <span>gina</span>
-          <span className="text-[#ff3e8a]">&</span>
-          <span>lucy</span>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
+        {/* Top: Newsletter + Links Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+          {/* Brand */}
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-2 font-bold mb-3">
+              <span className="text-2xl">🐾</span>
+              <span>gina</span>
+              <span className="text-[#ff3e8a]">&</span>
+              <span>lucy</span>
+            </div>
+            <p className="text-muted-foreground text-sm mb-4 max-w-md">
+              {t(
+                'Cat-Comedy mit AI-Magic. Gina (Siamkatze) und Lucy (Maine Coon) erobern das Internet — eine Reel nach der anderen.',
+                'Cat comedy with AI magic. Gina (Siamese) and Lucy (Maine Coon) conquer the internet — one reel at a time.'
+              )}
+            </p>
+            <div className="flex gap-3">
+              <a
+                href="https://www.instagram.com/ginaandlucy.official"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-muted-foreground hover:text-[#ff3e8a] transition-colors"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.youtube.com/@ginaandlucy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="text-muted-foreground hover:text-[#ff3e8a] transition-colors"
+              >
+                <Youtube className="h-5 w-5" />
+              </a>
+              <a
+                href="mailto:info@ginaandlucy.com"
+                aria-label="Email"
+                className="text-muted-foreground hover:text-[#ff3e8a] transition-colors"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Sitemap */}
+          <div className="flex flex-col gap-2 text-sm">
+            <h4 className="font-semibold mb-1">
+              {t('Navigation', 'Navigation')}
+            </h4>
+            <Link
+              href="/about"
+              className="text-muted-foreground hover:text-[#ff3e8a] transition-colors"
+            >
+              {t('Über uns', 'About')}
+            </Link>
+            <Link
+              href="/rassen"
+              className="text-muted-foreground hover:text-[#ff3e8a] transition-colors"
+            >
+              {t('Rassen', 'Breeds')}
+            </Link>
+            <Link
+              href="/feed"
+              className="text-muted-foreground hover:text-[#ff3e8a] transition-colors"
+            >
+              {t('Feed', 'Feed')}
+            </Link>
+            <Link
+              href="/press"
+              className="text-muted-foreground hover:text-[#ff3e8a] transition-colors"
+            >
+              {t('Press / Brand Deals', 'Press / Brand Deals')}
+            </Link>
+          </div>
+
+          {/* Newsletter signup */}
+          <div>
+            <NewsletterSignup variant="compact" />
+          </div>
         </div>
-        <p className="text-muted-foreground text-sm text-center">
-          © 2024 ginaandlucy.official — {t('Alle Rechte vorbehalten.', 'All Rights Reserved.')}<br className="sm:hidden" />
-          {' '}{t('Die Weltherrschaft ist in Arbeit.', 'The world domination is in progress.')} 😼
-        </p>
-        <div className="flex gap-4">
-          <a href="https://www.instagram.com/ginaandlucy.official" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[#ff3e8a] transition-colors text-sm">Instagram</a>
-          <a href="#" className="text-muted-foreground hover:text-[#ff3e8a] transition-colors text-sm">YouTube</a>
+
+        {/* Bottom: Legal + Copyright */}
+        <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-muted-foreground text-xs text-center sm:text-left">
+            © 2026 ginaandlucy.official —{' '}
+            {t('Alle Rechte vorbehalten.', 'All Rights Reserved.')}
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Link
+              href="/imprint"
+              className="text-muted-foreground hover:text-[#ff3e8a] transition-colors text-xs"
+            >
+              {t('Impressum', 'Imprint')}
+            </Link>
+            <Link
+              href="/privacy"
+              className="text-muted-foreground hover:text-[#ff3e8a] transition-colors text-xs"
+            >
+              {t('Datenschutz', 'Privacy')}
+            </Link>
+            <Link
+              href="/terms"
+              className="text-muted-foreground hover:text-[#ff3e8a] transition-colors text-xs"
+            >
+              {t('AGB', 'Terms')}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

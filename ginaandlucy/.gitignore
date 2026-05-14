@@ -1,1 +1,19 @@
+# dependencies
 node_modules
+
+# next.js build output
+.next
+out
+
+# env
+.env.local
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# os / editor
+.DS_Store
+Thumbs.db
+*.log

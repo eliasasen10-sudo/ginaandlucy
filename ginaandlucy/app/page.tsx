@@ -6,18 +6,20 @@ import { Card } from '@/components/ui/card'
 import { ContainerScroll } from '@/components/ui/container-scroll-animation'
 import { SparklesText } from '@/components/ui/sparkles-text'
 import Link from 'next/link'
-import { Instagram, Youtube, ShoppingBag, ArrowRight } from 'lucide-react'
+import { Instagram, Youtube, Mail, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/components/providers'
 import Image from 'next/image'
+import { LatestReels } from '@/components/latest-reels'
+import { NewsletterSignup } from '@/components/newsletter-signup'
 
 export default function HomePage() {
   const { t } = useLanguage()
 
   const stats = [
-    { label: t('Beiträge', 'Posts'), value: '131' },
-    { label: t('Follower', 'Followers'), value: '14.200' },
-    { label: t('Gefolgt', 'Following'), value: '5' },
+    { label: t('Beiträge', 'Posts'), value: '233' },
+    { label: t('IG Follower', 'IG Followers'), value: '22.817' },
+    { label: t('YT Subscriber', 'YT Subscribers'), value: '13.256' },
   ]
 
   const quickLinks = [
@@ -25,31 +27,31 @@ export default function HomePage() {
       emoji: '📖',
       title: t('Unsere Geschichte', 'Our Story'),
       desc: t(
-        'Erfahre wie eine Siamkatze und eine Maine Coon die Weltherrschaft planen.',
-        'Learn how a Siamese cat and a Maine Coon are planning world domination.'
+        'Wie eine Siamkatze und eine Maine Coon ein 47m²-Imperium aufgebaut haben.',
+        'How a Siamese cat and a Maine Coon built a 47m² empire.'
       ),
       href: '/about',
       label: t('Zur Story', 'Read the Story'),
     },
     {
-      emoji: '🛍️',
-      title: t('Merch Shop', 'Merch Shop'),
+      emoji: '🐾',
+      title: t('Die Rassen', 'The Breeds'),
       desc: t(
-        'Hoodies, Tassen, Socken — alles mit Katzenfaktor.',
-        'Hoodies, mugs, socks — all with cat factor.'
+        'Maine Coon vs. Siamkatze — alles was du über die beiden Persönlichkeiten wissen musst.',
+        'Maine Coon vs. Siamese — everything you need to know about both personalities.'
       ),
-      href: '/merch',
-      label: t('Zum Shop', 'To the Shop'),
+      href: '/rassen',
+      label: t('Rassen entdecken', 'Discover the breeds'),
     },
     {
-      emoji: '🎬',
-      title: t('Meme Feed', 'Meme Feed'),
+      emoji: '📩',
+      title: t('Brand Deals', 'Brand Deals'),
       desc: t(
-        'Die besten Momente. Mit Like-Button. Natürlich.',
-        'The best moments. With a like button. Obviously.'
+        'Pet-Brand? Audience-Daten, Pricing & Anfrageformular auf der Press-Seite.',
+        'Pet brand? Audience data, pricing & inquiry form on the press page.'
       ),
-      href: '/feed',
-      label: t('Zum Feed', 'To the Feed'),
+      href: '/press',
+      label: t('Media-Kit', 'Media Kit'),
     },
   ]
 
@@ -112,18 +114,20 @@ export default function HomePage() {
                 Instagram
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@ginaandlucy"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-3 rounded-xl bg-card border border-border text-foreground font-semibold text-sm hover:bg-muted transition-colors"
               >
                 <Youtube className="h-4 w-4" />
                 YouTube
               </a>
               <Link
-                href="/merch"
+                href="/press"
                 className="flex items-center gap-2 px-5 py-3 rounded-xl bg-card border border-border text-foreground font-semibold text-sm hover:bg-muted transition-colors"
               >
-                <ShoppingBag className="h-4 w-4" />
-                {t('Merch Shop', 'Merch Shop')}
+                <Mail className="h-4 w-4" />
+                {t('Media-Kit', 'Media Kit')}
               </Link>
             </div>
 
@@ -194,8 +198,11 @@ export default function HomePage() {
         </div>
       </ContainerScroll>
 
+      {/* Live: latest reels */}
+      <LatestReels limit={4} />
+
       {/* Quick links section */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {quickLinks.map((item) => (
             <Card key={item.title} className="p-6 group hover:border-[#ff3e8a]/40 transition-colors">
@@ -211,6 +218,11 @@ export default function HomePage() {
             </Card>
           ))}
         </div>
+      </section>
+
+      {/* Newsletter capture */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 pb-20">
+        <NewsletterSignup variant="card" />
       </section>
     </div>
   )

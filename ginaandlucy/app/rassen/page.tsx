@@ -267,6 +267,46 @@ export default function RassenPage() {
           )}
         </p>
       </motion.section>
+
+      {/* Related */}
+      <div className="grid sm:grid-cols-2 gap-3 mt-16">
+        <a
+          href="/about"
+          className="group p-6 rounded-2xl bg-card border border-border hover:border-[#ff3e8a]/40 transition-colors"
+        >
+          <div className="text-2xl mb-2">📖</div>
+          <h3 className="font-semibold text-foreground mb-1">
+            {t('Die Story dahinter', 'The story behind it')}
+          </h3>
+          <p className="text-muted-foreground text-sm">
+            {t(
+              'Wie Gina und Lucy zusammenkamen und wer eigentlich den Thron hat.',
+              'How Gina and Lucy ended up together and who actually holds the throne.'
+            )}
+          </p>
+          <span className="text-[#ff3e8a] text-sm font-medium mt-3 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            {t('Zur About-Seite', 'About them')} →
+          </span>
+        </a>
+        <a
+          href="/feed"
+          className="group p-6 rounded-2xl bg-card border border-border hover:border-[#ff3e8a]/40 transition-colors"
+        >
+          <div className="text-2xl mb-2">🎬</div>
+          <h3 className="font-semibold text-foreground mb-1">
+            {t('Beide in Action', 'See them in action')}
+          </h3>
+          <p className="text-muted-foreground text-sm">
+            {t(
+              'Die letzten Reels und Shorts — direkt von ihren Accounts.',
+              'The latest reels and shorts — straight from their accounts.'
+            )}
+          </p>
+          <span className="text-[#ff3e8a] text-sm font-medium mt-3 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            {t('Zum Feed', 'To the feed')} →
+          </span>
+        </a>
+      </div>
     </div>
   )
 }

@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { Menu, X, Home, Info, PawPrint, ShoppingBag, Play } from 'lucide-react'
+import { Menu, X, Home, Info, PawPrint, Play, Mail } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { LangToggle } from '@/components/ui/lang-toggle'
@@ -14,8 +14,8 @@ const routes = [
   { href: '/',        icon: Home,        labelDe: 'Home',      labelEn: 'Home' },
   { href: '/about',   icon: Info,        labelDe: 'Über uns',  labelEn: 'About' },
   { href: '/rassen',  icon: PawPrint,    labelDe: 'Rassen',    labelEn: 'Breeds' },
-  { href: '/merch',   icon: ShoppingBag, labelDe: 'Merch',     labelEn: 'Merch' },
   { href: '/feed',    icon: Play,        labelDe: 'Feed',      labelEn: 'Feed' },
+  { href: '/press',   icon: Mail,        labelDe: 'Presse',    labelEn: 'Press' },
 ]
 
 export function Navbar() {
@@ -54,12 +54,14 @@ export function Navbar() {
               selected={activeIndex >= 0 ? activeIndex : null}
               onChange={handleTabChange}
             />
-            <Link
-              href="/merch"
+            <a
+              href="https://www.instagram.com/ginaandlucy.official"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 rounded-xl bg-[#ff3e8a] text-white text-sm font-semibold hover:bg-[#ff3e8a]/80 transition-colors"
             >
-              {t('Shop', 'Shop')}
-            </Link>
+              {t('Folgen', 'Follow')}
+            </a>
             <div className="flex items-center gap-2">
               <LangToggle />
               <ThemeToggle />
