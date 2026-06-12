@@ -2,120 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
-import { Timeline } from '@/components/ui/timeline'
 import { BlurredStagger } from '@/components/ui/blurred-stagger-text'
-import { CircularRevealHeading } from '@/components/ui/circular-reveal-heading'
 import Image from 'next/image'
 import { useLanguage } from '@/components/providers'
 
 export default function AboutPage() {
   const { t } = useLanguage()
-
-  const timelineData = [
-    {
-      title: '2021',
-      content: (
-        <div>
-          <h3 className="font-semibold text-foreground text-base mb-1">
-            {t('Lucy & Manfred kommen ins Haus', 'Lucy & Manfred move in')}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {t(
-              'Lucy wird 2021 geboren und zieht mit ihrem Bruder Manfred ein. Schnell wird ihr klar: sie kann nicht mit Männern. Manfred wird aus dem Haus verbannt. Lucy: unbeeindruckt.',
-              'Lucy is born in 2021 and moves in with her brother Manfred. She quickly realizes: she cannot stand men. Manfred gets banned from the house. Lucy: unbothered.'
-            )}
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: '2021',
-      content: (
-        <div>
-          <h3 className="font-semibold text-foreground text-base mb-1">
-            {t('Neues Familienmitglied: Gina', 'New family member: Gina')}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {t(
-              'Um Lucy Gesellschaft zu geben, holt der Butler Gina — 8 Monate älter als Lucy, reinrassige Siamkatze, sofortiges Selbstbewusstsein. Gina ist von Anfang an größer und hat das Sagen. Lucy akzeptiert das vorläufig.',
-              "To give Lucy company, the butler gets Gina — 8 months older than Lucy, purebred Siamese, instant confidence. Gina is bigger from the start and calls the shots. Lucy accepts this. For now."
-            )}
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: '2023',
-      content: (
-        <div>
-          <h3 className="font-semibold text-foreground text-base mb-1">
-            {t('Lucy übernimmt den Thron', 'Lucy takes the throne')}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {t(
-              'Innerhalb von zwei Jahren wächst Lucy auf das Dreifache von Ginas Größe heran. Die Machtverhältnisse verschieben sich still und leise. Gina behauptet bis heute, sie habe das freiwillig abgegeben.',
-              'Within two years, Lucy grows to three times Gina\'s size. The power dynamics shift quietly. Gina claims to this day she gave it up voluntarily.'
-            )}
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: '2026',
-      content: (
-        <div>
-          <h3 className="font-semibold text-foreground text-base mb-1">
-            {t('Die Idee: selbst Insta-Stars werden', 'The idea: become Insta-stars themselves')}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {t(
-              'Beim gemeinsamen Instagram-Scrollen auf dem Sofa des Butlers haben Gina & Lucy die zündende Idee: Wenn andere das können, können wir das auch — und besser. Der Account @therealginaandlucy geht live.',
-              "While scrolling Instagram together on the butler's sofa, Gina & Lucy have the big idea: if others can do it, so can we — and better. The @therealginaandlucy account goes live."
-            )}
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: '2026',
-      content: (
-        <div>
-          <h3 className="font-semibold text-foreground text-base mb-1">
-            {t('Das Imperium wächst 🚀', 'The empire grows 🚀')}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {t(
-              'Die Community wächst, der Content läuft — und das Ziel ist klar: Internet-Stars werden, Influencer-Status erreichen, Weltherrschaft sichern. Schritt 1 ✅. Der Rest folgt.',
-              'The community grows, the content is flowing — and the goal is clear: become internet stars, reach influencer status, secure world domination. Step 1 ✅. The rest follows.'
-            )}
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: '2026',
-      content: (
-        <div>
-          <h3 className="font-semibold text-foreground text-base mb-1">
-            {t('Kapitel 2: The Real Gina and Lucy', 'Chapter 2: The Real Gina and Lucy')}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-            {t(
-              'Lucy feuert das komplette Management und übernimmt selbst. Neuer Account, gleiche Katzen, mehr Chaos: @therealginaandlucy. Schritt 1 (Neustart) ✅. Schritt 2 (viral gehen) läuft. Schritt 3 (Weltherrschaft) 🔜',
-              'Lucy fires the entire management and takes over herself. New account, same cats, more chaos: @therealginaandlucy. Step 1 (relaunch) ✅. Step 2 (going viral) in progress. Step 3 (world domination) 🔜'
-            )}
-          </p>
-          <Image
-            src="/higgsfield/lucy-boardroom-1.png"
-            alt={t('Lucy übernimmt das Boardroom', 'Lucy takes over the boardroom')}
-            width={600}
-            height={338}
-            className="rounded-xl border border-border w-full object-cover"
-          />
-        </div>
-      ),
-    },
-  ]
 
   const funFacts = [
     {
@@ -264,51 +156,6 @@ export default function AboutPage() {
               </Card>
             </motion.div>
           ))}
-        </div>
-      </div>
-
-      {/* Timeline */}
-      <div className="mb-20">
-        <h2 className="text-2xl font-bold mb-2 text-center text-foreground">
-          <BlurredStagger text={t('Die Karriere-Timeline', 'The Career Timeline')} stagger={0.04} />
-        </h2>
-        <Timeline data={timelineData} />
-      </div>
-
-      {/* Lebensmotto */}
-      <div className="mb-16">
-        <h2 className="text-2xl font-bold mb-6 text-center text-foreground">
-          <BlurredStagger text={t('Unser Lebensmotto', 'Our Life Motto')} stagger={0.04} />
-        </h2>
-        <p className="text-center text-muted-foreground text-sm mb-8">
-          {t('Was Gina & Lucy wirklich beschäftigt…', 'What Gina & Lucy really think about…')}
-        </p>
-        {/* Thought bubble wrapping the plate */}
-        <div className="flex justify-center">
-          <div
-            className="relative w-full max-w-[520px]"
-            style={{
-              backgroundImage: 'url(/Sprechblase.png)',
-              backgroundSize: '100% 100%',
-              backgroundRepeat: 'no-repeat',
-              aspectRatio: '1 / 1',
-            }}
-          >
-            {/* plate sits in the cloud area: pad bottom for the bubble dots */}
-            <div className="absolute inset-0 flex items-center justify-center pb-[18%] px-[10%]">
-              <CircularRevealHeading
-                size="lg"
-                rotatingImage="/Katzenfutter.png"
-                items={[
-                  { text: t('SCHLAFEN', 'SLEEP'), image: '/giniandlucy.png' },
-                  { text: t('ESSEN', 'EAT'), image: '/giniandlucy.png' },
-                  { text: t('SCHLAFEN', 'SLEEP'), image: '/giniandlucy.png' },
-                  { text: t('ESSEN', 'EAT'), image: '/giniandlucy.png' },
-                ]}
-                centerText={null}
-              />
-            </div>
-          </div>
         </div>
       </div>
 
