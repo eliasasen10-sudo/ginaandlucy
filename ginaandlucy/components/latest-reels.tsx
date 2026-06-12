@@ -41,6 +41,9 @@ export function LatestReels({ limit = 4 }: { limit?: number }) {
   // If error and no fallback content makes sense — hide section entirely
   if (error && !loading) return null
 
+  // Hide section while the new accounts have no posts yet
+  if (!loading && items.length === 0) return null
+
   return (
     <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <div className="flex items-end justify-between mb-8 flex-wrap gap-4">

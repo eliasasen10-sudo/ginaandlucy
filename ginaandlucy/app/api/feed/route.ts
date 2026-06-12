@@ -28,6 +28,10 @@ type FeedItem = {
 }
 
 async function fetchInstagram(): Promise<FeedItem[]> {
+  // Disabled during relaunch: old account token would surface old-account media.
+  // Re-enable once META_ACCESS_TOKEN + META_INSTAGRAM_BUSINESS_ID point to @therealginaandlucy.
+  if (!process.env.FEED_INSTAGRAM_ENABLED) return []
+
   const token = process.env.META_ACCESS_TOKEN
   const igId = process.env.META_INSTAGRAM_BUSINESS_ID
   if (!token || !igId) return []
@@ -84,9 +88,12 @@ async function fetchInstagram(): Promise<FeedItem[]> {
   }))
 }
 
+// New channel (@therealginaandlucy), hardcoded so a stale env var can't surface the old channel.
+const YT_CHANNEL_ID = 'UCynG0WhDXdRnSzQo_1Ep36A'
+
 async function fetchYouTube(): Promise<FeedItem[]> {
   const apiKey = process.env.YOUTUBE_API_KEY
-  const channelId = process.env.YOUTUBE_CHANNEL_ID
+  const channelId = YT_CHANNEL_ID
   if (!apiKey || !channelId) return []
 
   const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&order=date&type=video&maxResults=12&key=${apiKey}`
