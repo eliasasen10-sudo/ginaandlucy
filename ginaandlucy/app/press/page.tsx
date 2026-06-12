@@ -1,6 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/components/providers'
+import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 import { Instagram, Youtube, Mail, TrendingUp, Users, Heart, Award } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -12,19 +13,13 @@ export default function PressPage() {
   const stats = [
     {
       icon: Users,
-      label: t('Instagram Followers', 'Instagram Followers'),
-      value: '22.817',
-      sub: '@ginaandlucy.official',
-    },
-    {
-      icon: Youtube,
-      label: t('YouTube Subscribers', 'YouTube Subscribers'),
-      value: '13.256',
-      sub: '@ginaandlucy',
+      label: t('Aufgebaute Community', 'Community built'),
+      value: '36.000+',
+      sub: t('Track Record, Relaunch 2026', 'track record, relaunch 2026'),
     },
     {
       icon: TrendingUp,
-      label: t('Lifetime YT Views', 'Lifetime YT Views'),
+      label: t('Lifetime Views', 'Lifetime Views'),
       value: '1.48 Mio',
       sub: t('über 89 Videos', 'across 89 videos'),
     },
@@ -33,6 +28,12 @@ export default function PressPage() {
       label: t('Top Engagement-Rate', 'Top Engagement Rate'),
       value: '47%',
       sub: t('„Beatboxing Cat" Reel', '"Beatboxing Cat" Reel'),
+    },
+    {
+      icon: Award,
+      label: t('Posting-Frequenz', 'Posting frequency'),
+      value: t('4–6/Woche', '4–6/week'),
+      sub: t('IG, TikTok, YouTube, FB', 'IG, TikTok, YouTube, FB'),
     },
   ]
 
@@ -74,46 +75,69 @@ export default function PressPage() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff3e8a]/10 border border-[#ff3e8a]/20 text-[#ff3e8a] text-xs font-medium mb-6 w-fit">
-            <Award className="w-3 h-3" />
-            {t('Brand Partnerships', 'Brand Partnerships')}
-          </div>
+        <div className="flex flex-col lg:flex-row items-center gap-10">
+          <motion.div
+            className="flex-1"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff3e8a]/10 border border-[#ff3e8a]/20 text-[#ff3e8a] text-xs font-medium mb-6 w-fit">
+              <Award className="w-3 h-3" />
+              {t('Brand Partnerships', 'Brand Partnerships')}
+            </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.05] mb-6">
-            {t('Arbeiten mit', 'Work with')}<br />
-            <span className="text-[#a855f7]">Gina</span>{' '}
-            <span className="text-muted-foreground">&</span>{' '}
-            <span className="text-[#ff3e8a]">Lucy</span>
-          </h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.05] mb-6">
+              {t('Arbeiten mit', 'Work with')}<br />
+              <span className="text-[#a855f7]">Gina</span>{' '}
+              <span className="text-muted-foreground">&</span>{' '}
+              <span className="text-[#ff3e8a]">Lucy</span>
+            </h1>
 
-          <p className="text-muted-foreground text-lg max-w-2xl mb-8 leading-relaxed">
-            {t(
-              '36.000+ engagierte Cat-Lover. Echte Reichweite, echte Engagement-Raten, echte Resultate. Lass uns über deine Brand sprechen.',
-              '36,000+ engaged cat lovers. Real reach, real engagement rates, real results. Let\'s talk about your brand.'
-            )}
-          </p>
+            <p className="text-muted-foreground text-lg max-w-2xl mb-8 leading-relaxed">
+              {t(
+                '36.000+ Cat-Lover aufgebaut, bewährte Viral-Formate, jetzt Relaunch mit AI-Magic. Lass uns über deine Brand sprechen.',
+                '36,000+ cat lovers built, proven viral formats, now relaunching with AI magic. Let\'s talk about your brand.'
+              )}
+            </p>
 
-          <div className="flex flex-wrap gap-3">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#ff3e8a] to-[#ff8a3e] text-white font-semibold hover:opacity-90 transition-opacity"
-            >
-              <Mail className="h-4 w-4" />
-              {t('Anfrage senden', 'Send inquiry')}
-            </a>
-            <a
-              href="mailto:info@ginaandlucy.com?subject=Brand%20Partnership%20Inquiry"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border font-semibold hover:bg-muted transition-colors text-sm"
-            >
-              info@ginaandlucy.com
-            </a>
-          </div>
-        </motion.div>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#ff3e8a] to-[#ff8a3e] text-white font-semibold hover:opacity-90 transition-opacity"
+              >
+                <Mail className="h-4 w-4" />
+                {t('Anfrage senden', 'Send inquiry')}
+              </a>
+              <a
+                href="mailto:info@ginaandlucy.com?subject=Brand%20Partnership%20Inquiry"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border font-semibold hover:bg-muted transition-colors text-sm"
+              >
+                info@ginaandlucy.com
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="flex-1 w-full"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-2xl shadow-[#a855f7]/15">
+              <Image
+                src="/higgsfield/duo-boss-intern-1.png"
+                alt={t('Lucy der Boss und Gina die Assistentin', 'Lucy the boss and Gina the assistant')}
+                fill
+                priority
+                className="object-cover"
+              />
+              <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/10">
+                <span className="text-white text-[11px] font-semibold">{t('Das Team', 'The Team')} 🐾</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Stats */}
@@ -208,7 +232,7 @@ export default function PressPage() {
         </Card>
         <div className="flex flex-wrap gap-3 justify-center mt-6">
           <a
-            href="https://www.instagram.com/ginaandlucy.official"
+            href="https://www.instagram.com/therealginaandlucy"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-card border border-border text-sm font-semibold hover:bg-muted transition-colors"

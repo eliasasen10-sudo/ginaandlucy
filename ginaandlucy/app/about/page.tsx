@@ -69,8 +69,8 @@ export default function AboutPage() {
           </h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
             {t(
-              'Beim gemeinsamen Instagram-Scrollen auf dem Sofa des Butlers haben Gina & Lucy die zündende Idee: Wenn andere das können, können wir das auch — und besser. Der Account @ginaandlucy.official geht live.',
-              "While scrolling Instagram together on the butler's sofa, Gina & Lucy have the big idea: if others can do it, so can we — and better. The @ginaandlucy.official account goes live."
+              'Beim gemeinsamen Instagram-Scrollen auf dem Sofa des Butlers haben Gina & Lucy die zündende Idee: Wenn andere das können, können wir das auch — und besser. Der Account @therealginaandlucy geht live.',
+              "While scrolling Instagram together on the butler's sofa, Gina & Lucy have the big idea: if others can do it, so can we — and better. The @therealginaandlucy account goes live."
             )}
           </p>
         </div>
@@ -97,14 +97,21 @@ export default function AboutPage() {
       content: (
         <div>
           <h3 className="font-semibold text-foreground text-base mb-1">
-            {t('22.800+ Follower & 1.48M Views', '22,800+ followers & 1.48M views')}
+            {t('Kapitel 2: The Real Gina and Lucy', 'Chapter 2: The Real Gina and Lucy')}
           </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
+          <p className="text-muted-foreground text-sm leading-relaxed mb-3">
             {t(
-              'Instagram, YouTube, TikTok — überall dasselbe Chaos. Schritt 1 (viral gehen) ✅. Schritt 2 (Brands kommen rein). Schritt 3 (Herrschaft) 🔜',
-              'Instagram, YouTube, TikTok — same chaos everywhere. Step 1 (go viral) ✅. Step 2 (brands rolling in). Step 3 (domination) 🔜'
+              'Lucy feuert das komplette Management und übernimmt selbst. Neuer Account, gleiche Katzen, mehr Chaos: @therealginaandlucy. Schritt 1 (Neustart) ✅. Schritt 2 (viral gehen) läuft. Schritt 3 (Weltherrschaft) 🔜',
+              'Lucy fires the entire management and takes over herself. New account, same cats, more chaos: @therealginaandlucy. Step 1 (relaunch) ✅. Step 2 (going viral) in progress. Step 3 (world domination) 🔜'
             )}
           </p>
+          <Image
+            src="/higgsfield/lucy-boardroom-1.png"
+            alt={t('Lucy übernimmt das Boardroom', 'Lucy takes over the boardroom')}
+            width={600}
+            height={338}
+            className="rounded-xl border border-border w-full object-cover"
+          />
         </div>
       ),
     },
@@ -123,8 +130,8 @@ export default function AboutPage() {
       emoji: '🏠',
       title: t('Das Reich', 'The Kingdom'),
       desc: t(
-        '47m² Münchner Altbau, 2. OG, Südbalkon. 100% unter katzischer Kontrolle. Die Familie darf bleiben — vorerst.',
-        '47m² Munich old building, 2nd floor, south balcony. 100% under feline control. The family may stay — for now.'
+        '47m² Altbau, 2. OG, Südbalkon. 100% unter katzischer Kontrolle. Die Familie darf bleiben, vorerst.',
+        '47m² apartment, 2nd floor, south balcony. 100% under feline control. The family may stay, for now.'
       ),
     },
   ]
@@ -147,8 +154,8 @@ export default function AboutPage() {
         </h1>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
           {t(
-            'Eine Siamkatze & eine Maine Coon. Ein Apartment in München. Ein überarbeiteter Butler. Eine Mission: die Weltherrschaft. Das ist ihre Geschichte. Weitgehend wahr. Meistens.',
-            'A Siamese cat & a Maine Coon. An apartment in Munich. An overworked butler. One mission: world domination. This is their story. Mostly true. Usually.'
+            'Eine Siamkatze & eine Maine Coon. Ein Apartment. Ein überarbeiteter Butler. Eine Mission: die Weltherrschaft. Das ist ihre Geschichte. Weitgehend wahr. Meistens.',
+            'A Siamese cat & a Maine Coon. An apartment. An overworked butler. One mission: world domination. This is their story. Mostly true. Usually.'
           )}
         </p>
       </motion.div>
@@ -219,8 +226,8 @@ export default function AboutPage() {
       <p className="text-muted-foreground text-center text-lg leading-relaxed mb-16 max-w-2xl mx-auto">
         <BlurredStagger
           text={t(
-            '2026 hatten die beiden beim gemeinsamen Instagram-Scrollen auf dem Sofa der Familie die Idee: selbst durchstarten. Seitdem wächst @ginaandlucy.official und das Ziel ist klar. Influencer werden, Internet-Stars sein, Weltherrschaft sichern.',
-            "In 2026, while scrolling Instagram together on the family's sofa, the two had the idea: to make it big themselves. Since then @ginaandlucy.official has been growing and the goal is clear: become influencers, be internet stars, secure world domination."
+            '2026 hatten die beiden beim gemeinsamen Instagram-Scrollen auf dem Sofa der Familie die Idee: selbst durchstarten. Seitdem wächst @therealginaandlucy und das Ziel ist klar. Influencer werden, Internet-Stars sein, Weltherrschaft sichern.',
+            "In 2026, while scrolling Instagram together on the family's sofa, the two had the idea: to make it big themselves. Since then @therealginaandlucy has been growing and the goal is clear: become influencers, be internet stars, secure world domination."
           )}
           splitBy="word"
           stagger={0.035}

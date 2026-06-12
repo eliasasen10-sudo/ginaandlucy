@@ -41,7 +41,7 @@ export default function NotFound() {
         </div>
         <div className="flex gap-4 justify-center text-muted-foreground">
           <a
-            href="https://www.instagram.com/ginaandlucy.official"
+            href="https://www.instagram.com/therealginaandlucy"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -50,7 +50,7 @@ export default function NotFound() {
             <Instagram className="h-5 w-5" />
           </a>
           <a
-            href="https://www.youtube.com/@ginaandlucy"
+            href="https://www.youtube.com/@therealginaandlucy"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"

@@ -1,6 +1,5 @@
 'use client'
 
-import { LucyCursor } from '@/components/ui/lucy-cursor'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Card } from '@/components/ui/card'
 import { ContainerScroll } from '@/components/ui/container-scroll-animation'
@@ -17,9 +16,9 @@ export default function HomePage() {
   const { t } = useLanguage()
 
   const stats = [
-    { label: t('Beiträge', 'Posts'), value: '233' },
-    { label: t('IG Follower', 'IG Followers'), value: '22.817' },
-    { label: t('YT Subscriber', 'YT Subscribers'), value: '13.256' },
+    { label: t('Chaos', 'Chaos'), value: '24/7' },
+    { label: t('Boss', 'Boss'), value: '1' },
+    { label: t('Mitspracherecht Gina', 'Say in decisions (Gina)'), value: '0%' },
   ]
 
   const quickLinks = [
@@ -97,15 +96,15 @@ export default function HomePage() {
 
             <p className="text-muted-foreground text-lg max-w-md mb-8 leading-relaxed">
               {t(
-                'Gina schläft. Lucy regiert. Der Butler überlebt. Folge dem größten Katzen-Imperium Münchens. 🐾',
-                "Gina sleeps. Lucy rules. The butler survives. Follow Munich's biggest cat empire. 🐾"
+                'Gina schläft. Lucy regiert. Der Butler überlebt. Folge dem dramatischsten Katzen-Imperium des Internets. 🐾',
+                "Gina sleeps. Lucy rules. The butler survives. Follow the internet's most dramatic cat empire. 🐾"
               )}
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-3 mb-10">
               <a
-                href="https://www.instagram.com/ginaandlucy.official"
+                href="https://www.instagram.com/therealginaandlucy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#ff3e8a] to-[#ff8a3e] text-white font-semibold text-sm hover:opacity-90 transition-opacity"
@@ -114,13 +113,24 @@ export default function HomePage() {
                 Instagram
               </a>
               <a
-                href="https://www.youtube.com/@ginaandlucy"
+                href="https://www.youtube.com/@therealginaandlucy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-3 rounded-xl bg-card border border-border text-foreground font-semibold text-sm hover:bg-muted transition-colors"
               >
                 <Youtube className="h-4 w-4" />
                 YouTube
+              </a>
+              <a
+                href="https://www.tiktok.com/@therealginaandlucy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-card border border-border text-foreground font-semibold text-sm hover:bg-muted transition-colors"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                </svg>
+                TikTok
               </a>
               <Link
                 href="/press"
@@ -142,10 +152,37 @@ export default function HomePage() {
             </div>
           </motion.div>
 
-          {/* Right content — Lucy */}
-          <div className="flex-1 w-full lg:w-auto h-[420px] lg:h-[calc(100vh-4rem)] relative">
-            <LucyCursor />
-          </div>
+          {/* Right content — Boss & Intern */}
+          <motion.div
+            className="flex-1 w-full lg:w-auto relative py-8 lg:py-16 pl-6 pb-12"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-2xl shadow-[#ff3e8a]/20">
+              <Image
+                src="/higgsfield/lucy-boss-1.png"
+                alt="Lucy, der Boss"
+                fill
+                priority
+                className="object-cover"
+              />
+              <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/10">
+                <span className="text-white text-[11px] font-semibold tracking-wide">Lucy · {t('Der Boss', 'The Boss')}</span>
+              </div>
+            </div>
+            <div className="absolute -bottom-2 left-0 w-44 sm:w-56 rounded-xl overflow-hidden border border-border shadow-xl -rotate-3 aspect-[4/3]">
+              <Image
+                src="/higgsfield/gina-intern-1.png"
+                alt="Gina, die Praktikantin"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-0 inset-x-0 p-2 bg-gradient-to-t from-black/80 to-transparent">
+                <span className="text-white text-[11px] font-semibold">Gina · {t('Die Praktikantin', 'The Intern')}</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -167,7 +204,22 @@ export default function HomePage() {
         <div className="h-full w-full grid grid-cols-2 gap-3 p-2">
           <div className="relative rounded-xl overflow-hidden">
             <Image
-              src="/gini.jpeg"
+              src="/higgsfield/lucy-regal-1.png"
+              alt="Lucy auf ihrem Thron"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+              <div className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-[#ff3e8a]" />
+                <span className="text-white text-xs font-semibold">Lucy</span>
+                <span className="text-white/60 text-xs">{t('Maine Coon · CEO', 'Maine Coon · CEO')}</span>
+              </div>
+            </div>
+          </div>
+          <div className="relative rounded-xl overflow-hidden">
+            <Image
+              src="/higgsfield/gina-portrait-1.png"
               alt="Gina"
               fill
               className="object-cover"
@@ -176,22 +228,7 @@ export default function HomePage() {
               <div className="flex items-center gap-1.5">
                 <div className="w-2 h-2 rounded-full bg-[#a855f7]" />
                 <span className="text-white text-xs font-semibold">Gina</span>
-                <span className="text-white/60 text-xs">{t('Siamkatze', 'Siamese cat')}</span>
-              </div>
-            </div>
-          </div>
-          <div className="relative rounded-xl overflow-hidden">
-            <Image
-              src="/Lucy.png"
-              alt="Lucy"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
-              <div className="flex items-center gap-1.5">
-                <div className="w-2 h-2 rounded-full bg-[#ff3e8a]" />
-                <span className="text-white text-xs font-semibold">Lucy</span>
-                <span className="text-white/60 text-xs">Maine Coon</span>
+                <span className="text-white/60 text-xs">{t('Siamkatze · Praktikantin', 'Siamese · Intern')}</span>
               </div>
             </div>
           </div>

@@ -18,8 +18,8 @@ export default function TermsPage() {
           </h2>
           <p className="text-muted-foreground text-sm leading-relaxed">
             {t(
-              'Diese Nutzungsbedingungen regeln die Beziehung zwischen dem Betreiber von ginaandlucy.com (Elias Asen, München) und den Nutzern der Website sowie der zugehörigen Social-Media-Kanäle (@ginaandlucy.official auf Instagram, YouTube, Facebook).',
-              'These terms govern the relationship between the operator of ginaandlucy.com (Elias Asen, Munich) and users of the website and associated social media channels (@ginaandlucy.official on Instagram, YouTube, Facebook).'
+              'Diese Nutzungsbedingungen regeln die Beziehung zwischen dem Betreiber von ginaandlucy.com (Elias Asen, München) und den Nutzern der Website sowie der zugehörigen Social-Media-Kanäle (@therealginaandlucy auf Instagram, YouTube, Facebook).',
+              'These terms govern the relationship between the operator of ginaandlucy.com (Elias Asen, Munich) and users of the website and associated social media channels (@therealginaandlucy on Instagram, YouTube, Facebook).'
             )}
           </p>
         </section>

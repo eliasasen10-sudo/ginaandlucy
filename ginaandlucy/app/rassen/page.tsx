@@ -108,7 +108,7 @@ export default function RassenPage() {
             </p>
           </div>
           <div>
-            <Image src="/Lucy.png" alt="Maine Coon" width={600} height={500} className="rounded-2xl w-full object-cover border border-border" />
+            <Image src="/higgsfield/lucy-regal-1.png" alt="Maine Coon" width={600} height={500} className="rounded-2xl w-full object-cover border border-border" />
             <p className="text-muted-foreground text-xs mt-2 text-center">
               {t('Maine Coon — bekannt für ihr üppiges Fell und ihre majestätische Erscheinung', 'Maine Coon — known for its lush coat and majestic appearance')}
             </p>
@@ -189,7 +189,7 @@ export default function RassenPage() {
             </p>
           </div>
           <div className="lg:order-1">
-            <Image src="/gini.jpeg" alt="Siamese Cat" width={600} height={500} className="rounded-2xl w-full object-cover border border-border" />
+            <Image src="/higgsfield/gina-portrait-1.png" alt="Siamese Cat" width={600} height={500} className="rounded-2xl w-full object-cover border border-border" />
             <p className="text-muted-foreground text-xs mt-2 text-center">
               {t('Siamkatze — unverwechselbare blaue Augen und das klassische Point-Muster', 'Siamese cat — unmistakable blue eyes and the classic point pattern')}
             </p>

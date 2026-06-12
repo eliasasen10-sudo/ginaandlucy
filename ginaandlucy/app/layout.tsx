@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     'Siamkatze',
     'Cat Reels',
     'Brand Partnership',
-    'München Creator',
+    
     'Gina and Lucy',
   ],
   authors: [{ name: 'Elias Asen' }],
@@ -81,8 +81,8 @@ const jsonLd = {
       logo: `${SITE_URL}/opengraph-image`,
       email: 'info@ginaandlucy.com',
       sameAs: [
-        'https://www.instagram.com/ginaandlucy.official',
-        'https://www.youtube.com/@ginaandlucy',
+        'https://www.instagram.com/therealginaandlucy',
+        'https://www.youtube.com/@therealginaandlucy',
       ],
     },
     {
@@ -92,11 +92,6 @@ const jsonLd = {
       url: SITE_URL,
       jobTitle: 'Digital Creator',
       worksFor: { '@id': `${SITE_URL}/#organization` },
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'München',
-        addressCountry: 'DE',
-      },
     },
     {
       '@type': 'WebSite',

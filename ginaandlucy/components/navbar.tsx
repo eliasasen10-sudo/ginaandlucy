@@ -55,7 +55,7 @@ export function Navbar() {
               onChange={handleTabChange}
             />
             <a
-              href="https://www.instagram.com/ginaandlucy.official"
+              href="https://www.instagram.com/therealginaandlucy"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 rounded-xl bg-[#ff3e8a] text-white text-sm font-semibold hover:bg-[#ff3e8a]/80 transition-colors"

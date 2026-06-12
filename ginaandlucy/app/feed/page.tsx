@@ -221,7 +221,7 @@ export default function FeedPage() {
           </p>
           <div className="flex gap-3 justify-center">
             <a
-              href="https://www.instagram.com/ginaandlucy.official"
+              href="https://www.instagram.com/therealginaandlucy"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 rounded-lg bg-[#ff3e8a] text-white text-sm font-semibold flex items-center gap-2"
@@ -229,7 +229,7 @@ export default function FeedPage() {
               <Instagram className="h-4 w-4" /> Instagram
             </a>
             <a
-              href="https://www.youtube.com/@ginaandlucy"
+              href="https://www.youtube.com/@therealginaandlucy"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 rounded-lg bg-card border border-border text-foreground text-sm font-semibold flex items-center gap-2"
@@ -268,15 +268,15 @@ export default function FeedPage() {
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
           <a
-            href="https://www.instagram.com/ginaandlucy.official"
+            href="https://www.instagram.com/therealginaandlucy"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-3 rounded-xl bg-gradient-to-r from-[#ff3e8a] to-[#ff8a3e] text-white font-semibold text-sm flex items-center gap-2"
           >
-            <Instagram className="h-4 w-4" /> @ginaandlucy.official
+            <Instagram className="h-4 w-4" /> @therealginaandlucy
           </a>
           <a
-            href="https://www.youtube.com/@ginaandlucy"
+            href="https://www.youtube.com/@therealginaandlucy"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-3 rounded-xl bg-card border border-border text-foreground font-semibold text-sm flex items-center gap-2"
