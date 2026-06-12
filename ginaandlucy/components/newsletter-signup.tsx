@@ -10,7 +10,7 @@ interface Props {
 }
 
 /**
- * Newsletter Signup — sends email to Beehiiv via embedded form action.
+ * Newsletter Signup, sends email to Beehiiv via embedded form action.
  * Replace BEEHIIV_PUB_ID with the actual publication ID once Beehiiv is set up.
  *
  * For now: simple mailto-fallback so the form is visually complete and

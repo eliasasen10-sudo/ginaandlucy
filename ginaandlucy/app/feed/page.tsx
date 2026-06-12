@@ -22,7 +22,7 @@ type FeedItem = {
 type Filter = 'all' | 'instagram' | 'youtube'
 
 function formatNumber(n?: number): string {
-  if (n === undefined || n === null) return '—'
+  if (n === undefined || n === null) return ','
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`
   if (n >= 1_000) return `${(n / 1_000).toFixed(1)}K`
   return String(n)
@@ -141,7 +141,7 @@ export default function FeedPage() {
       {/* Header */}
       <motion.div
         className="text-center mb-10"
-        initial={{ opacity: 0, y: 20 }}
+        initial={false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
@@ -156,8 +156,8 @@ export default function FeedPage() {
         </h1>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
           {t(
-            'Die letzten Reels von Instagram und Shorts von YouTube — automatisch geladen, alle 30 Min aktualisiert.',
-            'The latest reels from Instagram and shorts from YouTube — auto-loaded, refreshed every 30 minutes.'
+            'Die letzten Reels von Instagram und Shorts von YouTube, automatisch geladen, alle 30 Min aktualisiert.',
+            'The latest reels from Instagram and shorts from YouTube, auto-loaded, refreshed every 30 minutes.'
           )}
         </p>
       </motion.div>
@@ -215,8 +215,8 @@ export default function FeedPage() {
           </h3>
           <p className="text-muted-foreground text-sm mb-6">
             {t(
-              'Schau direkt auf Instagram oder YouTube vorbei — alle Posts sind dort live.',
-              'Check directly on Instagram or YouTube — all posts are live there.'
+              'Schau direkt auf Instagram oder YouTube vorbei, alle Posts sind dort live.',
+              'Check directly on Instagram or YouTube, all posts are live there.'
             )}
           </p>
           <div className="flex gap-3 justify-center">
@@ -251,7 +251,7 @@ export default function FeedPage() {
           {filtered.map((item, i) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.03 * i }}
             >

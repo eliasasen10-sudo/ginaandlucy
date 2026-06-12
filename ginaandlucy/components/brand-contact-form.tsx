@@ -79,7 +79,7 @@ export function BrandContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-4">
-      {/* Honeypot — hidden from humans, attractive to bots */}
+      {/* Honeypot, hidden from humans, attractive to bots */}
       <input
         type="text"
         name="website"
@@ -145,7 +145,7 @@ export function BrandContactForm() {
             className={inputCls + ' cursor-pointer'}
             defaultValue=""
           >
-            <option value="">{t('— bitte wählen —', '— please select —')}</option>
+            <option value="">{t(', bitte wählen ,', ', please select ,')}</option>
             {BUDGETS.map((b) => (
               <option key={b.value} value={b.value}>
                 {t(b.labelDe, b.labelEn)}

@@ -38,7 +38,7 @@ export function LatestReels({ limit = 4 }: { limit?: number }) {
     }
   }, [limit])
 
-  // If error and no fallback content makes sense — hide section entirely
+  // If error and no fallback content makes sense, hide section entirely
   if (error && !loading) return null
 
   // Hide section while the new accounts have no posts yet

@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useLanguage } from '@/components/providers'
-import { NewsletterSignup } from '@/components/newsletter-signup'
 import { Instagram, Youtube, Mail } from 'lucide-react'
 
 export function Footer() {
@@ -23,8 +22,8 @@ export function Footer() {
             </div>
             <p className="text-muted-foreground text-sm mb-4 max-w-md">
               {t(
-                'Cat-Comedy mit AI-Magic. Gina (Siamkatze) und Lucy (Maine Coon) erobern das Internet — eine Reel nach der anderen.',
-                'Cat comedy with AI magic. Gina (Siamese) and Lucy (Maine Coon) conquer the internet — one reel at a time.'
+                'Cat-Comedy mit AI-Magic. Gina (Siamkatze) und Lucy (Maine Coon) erobern das Internet, eine Reel nach der anderen.',
+                'Cat comedy with AI magic. Gina (Siamese) and Lucy (Maine Coon) conquer the internet, one reel at a time.'
               )}
             </p>
             <div className="flex gap-3">
@@ -98,16 +97,12 @@ export function Footer() {
             </Link>
           </div>
 
-          {/* Newsletter signup */}
-          <div>
-            <NewsletterSignup variant="compact" />
-          </div>
         </div>
 
         {/* Bottom: Legal + Copyright */}
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-xs text-center sm:text-left">
-            © 2026 therealginaandlucy —{' '}
+            © 2026 therealginaandlucy.{' '}
             {t('Alle Rechte vorbehalten.', 'All Rights Reserved.')}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

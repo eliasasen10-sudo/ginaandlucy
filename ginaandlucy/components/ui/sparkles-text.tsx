@@ -18,9 +18,9 @@ interface SparklesTextProps {
   text: string;
   sparklesCount?: number;
   colors?: { first: string; second: string };
-  /** ms active   — default 2000 */
+  /** ms active  , default 2000 */
   activeMs?: number;
-  /** ms pause    — default 5000 */
+  /** ms pause   , default 5000 */
   pauseMs?: number;
 }
 

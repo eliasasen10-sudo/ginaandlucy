@@ -39,7 +39,7 @@ const SLIDES = [
     dot: '#a855f7',
     quote: {
       text: '"I won the fight."',
-      author: '— Gina',
+      author: ', Gina',
       emoji: '👑',
     },
   },
@@ -59,7 +59,7 @@ const SLIDES = [
     dot: '#a855f7',
     quote: {
       text: '"Let me sleep."',
-      author: '— Gina',
+      author: ', Gina',
       emoji: '😴',
     },
   },
@@ -201,7 +201,7 @@ export function LucyCursor() {
           </motion.div>
         </div>
 
-        {/* Funny quote — only for specific slides */}
+        {/* Funny quote, only for specific slides */}
         <AnimatePresence mode="wait">
           {slide.quote && (
             <motion.div

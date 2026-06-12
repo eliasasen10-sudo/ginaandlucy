@@ -9,12 +9,12 @@ import { Analytics } from '@vercel/analytics/react'
 const SITE_URL = 'https://www.ginaandlucy.com'
 const SITE_NAME = 'Gina & Lucy'
 const DESCRIPTION =
-  'Cat-Comedy mit AI-Magic. Gina (Siamkatze) und Lucy (Maine Coon) erobern das Internet. 22.817 IG-Follower · 13.256 YT-Subscriber · 1.48M Views.'
+  'Cat-Comedy mit AI-Magic. Gina (Siamkatze) und Lucy (Maine Coon) erobern das Internet. Lucy ist der Boss, Gina leidet.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Gina & Lucy — The chaotic life of two cats',
+    default: 'Gina & Lucy, The chaotic life of two cats',
     template: '%s · Gina & Lucy',
   },
   description: DESCRIPTION,
@@ -38,20 +38,20 @@ export const metadata: Metadata = {
     alternateLocale: 'en_US',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: 'Gina & Lucy — The chaotic life of two cats',
+    title: 'Gina & Lucy, The chaotic life of two cats',
     description: DESCRIPTION,
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Gina & Lucy — Cat-Comedy mit AI-Magic',
+        alt: 'Gina & Lucy, Cat-Comedy mit AI-Magic',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gina & Lucy — The chaotic life of two cats',
+    title: 'Gina & Lucy, The chaotic life of two cats',
     description: DESCRIPTION,
     images: ['/opengraph-image'],
   },

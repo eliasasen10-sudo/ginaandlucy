@@ -9,7 +9,6 @@ import { motion } from 'framer-motion'
 import { useLanguage } from '@/components/providers'
 import Image from 'next/image'
 import { LatestReels } from '@/components/latest-reels'
-import { NewsletterSignup } from '@/components/newsletter-signup'
 
 export default function HomePage() {
   const { t } = useLanguage()
@@ -35,8 +34,8 @@ export default function HomePage() {
       emoji: '🐾',
       title: t('Die Rassen', 'The Breeds'),
       desc: t(
-        'Maine Coon vs. Siamkatze — alles was du über die beiden Persönlichkeiten wissen musst.',
-        'Maine Coon vs. Siamese — everything you need to know about both personalities.'
+        'Maine Coon vs. Siamkatze, alles was du über die beiden Persönlichkeiten wissen musst.',
+        'Maine Coon vs. Siamese, everything you need to know about both personalities.'
       ),
       href: '/rassen',
       label: t('Rassen entdecken', 'Discover the breeds'),
@@ -63,7 +62,7 @@ export default function HomePage() {
           {/* Left content */}
           <motion.div
             className="flex-1 z-10 flex flex-col justify-center"
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
@@ -80,13 +79,6 @@ export default function HomePage() {
               <span className="text-muted-foreground">&</span>{' '}
               <span className="text-[#ff3e8a]">Lucy</span>
             </h1>
-
-            <p className="text-muted-foreground text-lg max-w-md mb-8 leading-relaxed">
-              {t(
-                'Gina schläft. Lucy regiert. Der Butler überlebt. Folge dem dramatischsten Katzen-Imperium des Internets. 🐾',
-                "Gina sleeps. Lucy rules. The butler survives. Follow the internet's most dramatic cat empire. 🐾"
-              )}
-            </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-3 mb-10">
@@ -139,10 +131,10 @@ export default function HomePage() {
             </div>
           </motion.div>
 
-          {/* Right content — Boss & Intern */}
+          {/* Right content, Boss & Intern */}
           <motion.div
             className="flex-1 w-full lg:w-auto relative py-8 lg:py-16 pl-6 pb-12"
-            initial={{ opacity: 0, scale: 0.96 }}
+            initial={false}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
@@ -174,20 +166,7 @@ export default function HomePage() {
       </section>
 
       {/* Scroll Animation Section */}
-      <ContainerScroll
-        titleComponent={
-          <div className="mb-6">
-            <p className="text-muted-foreground text-sm font-medium uppercase tracking-widest mb-3">
-              {t('Das Imperium in Bildern', 'The empire in pictures')}
-            </p>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-foreground leading-tight">
-              {t('Gina schläft.', 'Gina sleeps.')}<br />
-              <span className="text-[#a855f7]">{t('Lucy regiert.', 'Lucy rules.')}</span>{' '}
-              <span className="text-[#ff3e8a]">{t('Chaos garantiert.', 'Chaos guaranteed.')}</span>
-            </h2>
-          </div>
-        }
-      >
+      <ContainerScroll titleComponent={<div className="mb-6" />}>
         <div className="h-full w-full grid grid-cols-2 gap-3 p-2">
           <div className="relative rounded-xl overflow-hidden">
             <Image
@@ -244,10 +223,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Newsletter capture */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 pb-20">
-        <NewsletterSignup variant="card" />
-      </section>
     </div>
   )
 }

@@ -78,7 +78,7 @@ export default function PressPage() {
         <div className="flex flex-col lg:flex-row items-center gap-10">
           <motion.div
             className="flex-1"
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
@@ -120,7 +120,7 @@ export default function PressPage() {
 
           <motion.div
             className="flex-1 w-full"
-            initial={{ opacity: 0, scale: 0.96 }}
+            initial={false}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
@@ -146,7 +146,7 @@ export default function PressPage() {
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >

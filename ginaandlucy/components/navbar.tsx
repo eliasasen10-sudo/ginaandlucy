@@ -47,7 +47,7 @@ export function Navbar() {
             <span className="text-foreground">lucy</span>
           </Link>
 
-          {/* Desktop nav — ExpandableTabs */}
+          {/* Desktop nav, ExpandableTabs */}
           <div className="hidden md:flex items-center gap-3">
             <ExpandableTabs
               tabs={tabs}

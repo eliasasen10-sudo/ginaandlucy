@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 export const metadata: Metadata = {
   title: 'Live Feed',
   description:
-    'Die letzten Reels von Instagram und Shorts von YouTube — live aus den Accounts, alle 30 Minuten aktualisiert.',
+    'Die letzten Reels von Instagram und Shorts von YouTube, live aus den Accounts, alle 30 Minuten aktualisiert.',
   alternates: { canonical: 'https://www.ginaandlucy.com/feed' },
   openGraph: {
     title: 'Live Feed · Gina & Lucy',

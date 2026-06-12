@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Gina & Lucy — Cat-Comedy mit AI-Magic'
+export const alt = 'Gina & Lucy, Cat-Comedy mit AI-Magic'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
