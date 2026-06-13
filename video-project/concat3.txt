@@ -1,2 +1,0 @@
-file 'clipA-trim.mp4'
-file 'clipB-enc.mp4'
