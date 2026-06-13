@@ -58,6 +58,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
+  other: {
+    'tiktok-developers-site-verification': 'lhUih76eabeUNeEsMoEcXaAKA2w5LhU5',
+  },
   robots: {
     index: true,
     follow: true,

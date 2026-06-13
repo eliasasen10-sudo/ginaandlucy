@@ -1,0 +1,2 @@
+file 'clip1.mp4'
+file 'clip2-v2.mp4'
